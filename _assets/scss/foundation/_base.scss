@@ -1,0 +1,119 @@
+@use "global";
+
+//ベーススタイル
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh
+}
+
+html,
+body {
+  color: global.$color-text-black;
+  font-family: global.$font-family-ja;
+  @include global.fz(14);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'palt';
+  padding: 0;
+  margin: 0;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-weight: 400;
+}
+
+body,
+button,
+input {
+  line-height: 1.6;
+}
+
+body.is-drawerActive {
+  overflow: hidden;
+  height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre {
+  margin: 0;
+  font-size: 1em;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+dd {
+  margin-left: 0;
+}
+
+
+small {
+  font-size: 100%;
+}
+
+input,
+button,
+select {
+  outline: none;
+}
+
+
+// 半角英数表示崩れ
+h1,
+h2,
+h3,
+h4,
+p,
+th,
+td,
+dt,
+dd {
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}

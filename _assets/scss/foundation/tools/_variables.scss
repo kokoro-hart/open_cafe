@@ -1,0 +1,39 @@
+
+
+// フォントファミリー
+//--------------------------------------------------------------------------
+//日本語
+$font-family-ja: "Noto Serif JP", "NotoSerifCJKjp Medium", "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo, メイリオ, sans-serif;
+//英語
+$font-family-en01: 'Amatic SC', cursive;
+$font-family-en02: 'Patua One', cursive;
+$font-family-en03: 'Damion', cursive;
+
+//  カラー
+//--------------------------------------------------------------------------
+//テキストカラー
+$color-text-black: #222222;
+$color-text-white: #FFF;
+$color-text-gray: #888;
+
+//メインカラー
+$color-main: #382620;
+
+$color-base01: #EAE0D5;
+$color-base02: #F3EFEB;
+
+//サブカラー
+$color-sub01: #0060A0;
+$color-sub02: #DFF1FD;
+
+//アクセントカラー
+$color-accent: #F07317;
+
+//box-shadow 
+$box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+
+//  レイアウト
+//--------------------------------------------------------------------------
+//コンテナ幅（インナー幅）
+$layout-width-inner: 1100px;
+
