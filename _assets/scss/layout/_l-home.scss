@@ -1,0 +1,11 @@
+@use "foundation/global";
+
+// Layout トップページ
+//--------------------------------------------------------------------------
+.l-home {
+  &__mv {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+}
