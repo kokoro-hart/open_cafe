@@ -20,6 +20,9 @@
   <meta property="og:image" content="/common/og-image.jpg">
   <meta property="og:site_name" content="<%= jsonData.siteInfo.siteUrl %> ">
 
+  <% if (pageId==='home' ){ %>
+    <link rel="stylesheet" href="//unpkg.com/swiper/swiper-bundle.min.css">
+  <% } %>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 </head>
@@ -27,23 +30,67 @@
 <body>
 
   <div id="wrapper">
-    <header id="header" class="c-header">
-      <div class="inner-block">
-        <% if (pageId === 'home'){ %>
-        <h1><%= jsonData.siteInfo.name %></h1>
-        <% } else { %>
-        <a href="/"><%= jsonData.siteInfo.name %></a>
-        <% } %>
-      </div><!-- /inner-block -->
+    <header class="l-header p-header">
+      <div class="l-header__inner">
+        <h1 class="p-header__logo u-hidden-xl-up">
+          <a href="/" class="p-header__logo-link">
+            <svg class="c-svg p-header__logo-icon" width="120" height="64">
+              <use xlink:href="/img/svg/sprite.min.svg#logo02" />
+            </svg>
+          </a>
+        </h1>
+      </div>
+
+      <button id="js-drawer-button" class="p-header__button c-button-drawer" aria-controls="js-glabal-nav" aria-expanded="false" area-label="メニューを開閉する">
+        <span class="c-button-drawer__line"></span>
+      </button>
+
+      <div id="js-drawer-bg" class="p-header__drawer-bg"></div>
+
+      <div class="p-header-menu" id="js-global-nav" area-hidden="true">
+        <h1 class="p-header__logo">
+          <a href="/" class="p-header__logo-link">
+            <svg class="c-svg p-header__logo-icon" width="120" height="64">
+              <use xlink:href="/img/svg/sprite.min.svg#logo02" />
+            </svg>
+          </a>
+        </h1>
+        <nav class="p-header-menu__nav p-global-nav">
+          <ul class="p-global-nav__list">
+            <% for(let page in jsonData.pages){ %>
+            <li class="p-global-nav__item">
+              <a href="" class="p-global-nav__link">
+                <span class="p-global-nav__text-en"><%= jsonData.pages[page].name %></span>
+                <span class="p-global-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
+              </a>
+            </li>
+            <% }; %>
+          </ul>
+        </nav>
+        <div class="p-header-menu__sns p-sns">
+          <ul class="p-sns__list">
+            <li class="p-sns__item p-sns__item--big">
+              <a href="" class="p-sns__link" target="_blank" rel="noopener noreferrer">
+                <svg class="c-svg p-sns__icon" width="24" height="24">
+                  <use xlink:href="/img/svg/sprite.min.svg#icon-twitter02" />
+                </svg>
+              </a>
+            </li>
+            <li class="p-sns__item p-sns__item--big">
+              <a href="" class="p-sns__link" target="_blank" rel="noopener noreferrer">
+                <svg class="c-svg p-sns__icon" width="24" height="24">
+                  <use xlink:href="/img/svg/sprite.min.svg#icon-instagram02" />
+                </svg>
+              </a>
+            </li>
+            <li class="p-sns__item p-sns__item--big">
+              <a href="" class="p-sns__link" target="_blank" rel="noopener noreferrer">
+                <svg class="c-svg p-sns__icon" width="24" height="24">
+                  <use xlink:href="/img/svg/sprite.min.svg#icon-youtube02" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
-    <nav>
-      <ul>
-        <% for(let page in jsonData.pages){ %>
-        <% if (page === pageId) { %>
-        <li class="current"><%= jsonData.pages[page].name %></li>
-        <% } else { %>
-        <li><a href="<%= jsonData.pages[page].slug %>"><%= jsonData.pages[page].name %></a></li>
-        <% } %>
-        <% }; %>
-      </ul>
-    </nav>
