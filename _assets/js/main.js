@@ -3,10 +3,12 @@
  * webpack.config.jsにて定義している
  */
 
-//SVGスプライトをIEで使用するためのライブラリ
+//SVGスプライト
 import '@modules/svgxuse';
-//ブラウザ判定のためライブラリ
+//ブラウザ判定
 import './lib/b_browser_switcher.js';
+//line-clamp
+import './lib/clamp.js';
 
 
 import './common'
