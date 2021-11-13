@@ -1,0 +1,70 @@
+@use "foundation/global";
+
+// Component ボタン
+//--------------------------------------------------------------------------
+
+//ドロワーボタン
+.c-button-drawer {
+  z-index: 21;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 22px 16px;
+  background-color: global.$color-main;
+  transition: background-color 0.3s;
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27px;
+    height: 2.25px;
+    background-color: global.$color-text-white;
+    transition: background-color 0.3s, width 0.3s , transform 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: 0;
+      width: 27px;
+      height: 2px;
+      background-color: global.$color-text-white;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 27px;
+      height: 2px;
+      background-color: global.$color-text-white;
+      transition: transform 0.3s;
+    }
+  }
+}
+
+//ドロワーアクティブ時
+.c-button-drawer.is-active {
+  background-color: global.$color-text-white;
+
+  .c-button-drawer__line {
+    width: 0;
+    background-color: global.$color-main;
+
+    &::before {
+      background-color: global.$color-main;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg) ;
+    }
+
+    &::after {
+      background-color: global.$color-main;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg) ;
+    }
+  }
+}

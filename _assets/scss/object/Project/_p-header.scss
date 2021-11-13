@@ -1,0 +1,85 @@
+@use "foundation/global";
+
+// Project ヘッダー
+//--------------------------------------------------------------------------
+
+.p-header {
+  &__logo {
+    max-width: 120px;
+    width: 100%;
+    height: 63px;
+    margin-right: auto;
+  }
+
+  &__logo-link {
+    display: block;
+  }
+
+  &__logo-icon {
+    width: 100%;
+    height: auto;
+  }
+
+  &__button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__drawer-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: global.$color-drawer-bg;
+    transition: opacity 0.5s;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//ドロワーメニュー
+.p-header-menu {
+  position: fixed;
+  top: 0;
+  right: -375px;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 375px;
+  width: 100%;
+  height: 100vh;
+  padding: 10px 15px;
+  background-color: global.$color-main;
+  color: global.$color-text-white;
+  transition: right 0.5s, opacity 0.5s;
+
+  &__nav {
+    max-width: 240px;
+    width: 100%;
+    margin: 63px auto 0;
+    padding-left: 30px;
+
+    @include global.mq(xs) {
+      max-width: 100%;
+    }
+  }
+
+  &__sns {
+    margin-top: 60px;
+  }
+}
+
+//ドロワーアクティブ時
+.p-header-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+  right: 0;
+}

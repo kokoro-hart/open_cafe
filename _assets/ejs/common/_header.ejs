@@ -59,7 +59,7 @@
           <ul class="p-global-nav__list">
             <% for(let page in jsonData.pages){ %>
             <li class="p-global-nav__item">
-              <a href="" class="p-global-nav__link">
+              <a href="<%= jsonData.pages[page].slug %>" class="p-global-nav__link">
                 <span class="p-global-nav__text-en"><%= jsonData.pages[page].name %></span>
                 <span class="p-global-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
               </a>
