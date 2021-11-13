@@ -3,9 +3,92 @@
 <%- include('./common/_header', {pageId:pageId }) %>
 
 <%# console.log(jsonData) %>
-<main class="p-home">
-  <div class="inner-block">
-    homeです
+<main class="p-home l-home">
+  <div class="p-mv l-home__mv">
+    <div class="p-mv-menu u-hidden-xl-down">
+      <h1 class="p-mv-menu__logo">
+        <a href="" class="p-mv-menu__logo-link">
+          <svg class="c-svg p-mv-menu__logo-icon" width="163" height="85">
+            <use xlink:href="/img/svg/sprite.min.svg#logo" />
+          </svg>
+        </a>
+      </h1>
+      <nav class="p-mv-menu__nav p-mv-nav">
+        <ul class="p-mv-nav__list">
+          <% for(let page in jsonData.pages){ %>
+          <li class="p-mv-nav__item">
+            <a href=<%= jsonData.pages[page].slug %>"" class="p-mv-nav__link">
+              <span class="p-mv-nav__text-en"><%= jsonData.pages[page].name %></span>
+              <span class="p-mv-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
+            </a>
+          </li>
+          <% }; %>
+        </ul>
+      </nav>
+      <div class="p-mv-menu__sns p-sns">
+        <ul class="p-sns__list">
+          <li class="p-sns__item">
+            <a href="" class="p-sns__link" target="_blank" rel="noopener noreferrer">
+              <svg class="c-svg p-sns__icon" width="24" height="24">
+                <use xlink:href="/img/svg/sprite.min.svg#icon-twitter" />
+              </svg>
+            </a>
+          </li>
+          <li class="p-sns__item">
+            <a href="" class="p-sns__link"target="_blank" rel="noopener noreferrer">
+              <svg class="c-svg p-sns__icon" width="24" height="24">
+                <use xlink:href="/img/svg/sprite.min.svg#icon-instagram" />
+              </svg>
+            </a>
+          </li>
+          <li class="p-sns__item">
+            <a href="" class="p-sns__link"target="_blank" rel="noopener noreferrer">
+              <svg class="c-svg p-sns__icon" width="24" height="24">
+                <use xlink:href="/img/svg/sprite.min.svg#icon-youtube" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="js-slider" class="p-mv-slider">
+      <div class="swiper swiper-mv">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <picture class="p-mv-slider__picture">
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv01_sp.webp" media="(max-width: 767px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv01_pc.webp" media="(min-width: 768px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/common/img-mv01_sp.jpeg" media="(max-width: 767px)"/>
+              <img src="/img/common/img-mv01_pc.jpeg" class="p-mv-slider__img" media="(min-width: 768px)" decoding="async" alt="メインビジュアル">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="p-mv-slider__picture">
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv02_sp.webp" media="(max-width: 767px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv02_pc.webp" media="(min-width: 768px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/common/img-mv02_sp.jpeg" media="(max-width: 767px)" />
+              <img src="/img/common/img-mv02_pc.jpeg" class="p-mv-slider__img" media="(min-width: 768px)" decoding="async" alt="メインビジュアル">
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture class="p-mv-slider__picture">
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv03_sp.webp" media="(max-width: 767px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/webp/img-mv03_pc.webp" media="(min-width: 768px)" type="image/webp" />
+              <source class="p-mv-slider__img" srcset="/img/common/img-mv03_sp.jpeg" media="(max-width: 767px)" />
+              <img src="/img/common/img-mv03_pc.jpeg" class="p-mv-slider__img" media="(min-width: 768px)" decoding="async" alt="メインビジュアル">
+            </picture>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+      
+      </div>
+        <div class="swiper-pagination"></div>
+      <p class="p-mv-slider__catch">
+        パスタとコーヒーが<br class="u-hidden-md-up">とってもおいしい、<br>ほっと落ち着くのんびり空間。
+      </p>
+    </div>
   </div>
 </main>
 

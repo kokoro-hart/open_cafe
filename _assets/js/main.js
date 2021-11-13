@@ -10,3 +10,6 @@ import './lib/b_browser_switcher.js';
 
 
 import './common'
+
+import './modules/swiper'
+import './modules/drawer'
