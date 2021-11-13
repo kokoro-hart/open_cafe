@@ -19,7 +19,11 @@
     max-width: 1280px;
   }
 
-  &__special-lunch {
-    
+  &__lunch {
+    margin-top: 120px;
+
+    @include global.mq(md) {
+      margin-top: 240px;
+    }
   }
 }
