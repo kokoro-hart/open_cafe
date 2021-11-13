@@ -7,8 +7,9 @@
   <div class="p-mv l-home__mv">
     <div class="p-mv-menu u-hidden-xl-down">
       <h1 class="p-mv-menu__logo">
-        <a href="" class="p-mv-menu__logo-link">
+        <a href="/" class="p-mv-menu__logo-link">
           <svg class="c-svg p-mv-menu__logo-icon" width="163" height="85">
+            Open Cafe - dish & coffee -
             <use xlink:href="/img/svg/sprite.min.svg#logo" />
           </svg>
         </a>
@@ -17,7 +18,7 @@
         <ul class="p-mv-nav__list">
           <% for(let page in jsonData.pages){ %>
           <li class="p-mv-nav__item">
-            <a href=<%= jsonData.pages[page].slug %>"" class="p-mv-nav__link">
+            <a href="<%= jsonData.pages[page].slug %>" class="p-mv-nav__link">
               <span class="p-mv-nav__text-en"><%= jsonData.pages[page].name %></span>
               <span class="p-mv-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
             </a>
@@ -90,6 +91,57 @@
       </p>
     </div>
   </div>
+
+  <section class="p-home-concept p-concept l-home__concept">
+    <div class="p-concept__inner">
+      <picture class="p-concept__picture">
+        <source class="p-concept__img" srcset="/img/webp/img-concept.webp" type="image/webp" />
+        <img src="/img/common/img-concept.jpeg" class="p-concept__img" width="1200" height="1529" decoding="async"
+          alt="コンセプトイメージ">
+      </picture>
+      <div class="p-concept__contents">
+        <div class="p-concept__title-wrapper">
+          <h2 class="c-section-title">
+            <span class="c-section-title__en">CONCEPT</span>
+            <span class="c-section-title__ja">当店のこだわり</span>
+          </h2>
+        </div>
+        <div class="p-concept__body">
+          <h3 class="p-concept__title">
+            最高のコーヒーと、<br>時の流れを味わうことができる<br>手作りカフェ
+          </h3>
+          <p class="p-concept__text">
+            ダミー_国内外から賞賛を
+            <br>
+            受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+            <br>
+            ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+            <br>
+            <br>
+            ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+          </p>
+          <div class="p-concept__link-wrapper">
+            <a href="/concept/" class="c-button-primary">詳しくはこちら</a>            
+          </div>
+        </div>               
+      </div>      
+      
+    </div>
+  </section>
+
+  <section class="p-special-lunch l-home__special-lunch">
+    <div class="p-special-lunch__inner">
+      <div class="p-special-lunch__title-wrapper">
+        <h2 class="c-section-title">
+          <span class="c-section-title__en"></span>
+          <span class="c-section-title__ja"></span>
+        </h2>
+      </div>
+      <div class="p-special-lunch__contents">
+
+      </div>
+    </div>
+  </section>
 </main>
 
 
