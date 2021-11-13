@@ -68,3 +68,53 @@
     }
   }
 }
+
+//通常のボタン
+.c-button-primary {
+  $this: &;
+  position: relative;
+  display: inline-block;
+  max-width: 290px;
+  width: 100%;
+  padding: 24px 12px;
+  background-color: global.$color-text-black;
+  color: global.$color-text-white;
+  @include global.fz(16);
+  @include global.lh(1.18);
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translate(6px, 6px);
+    &::before {
+      transform: translate(-6px, -6px);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%227.814%22%20height%3D%2213.628%22%20viewBox%3D%220%200%207.814%2013.628%22%3E%20%3Cpath%20id%3D%22Icon_feather-chevron-right%22%20data-name%3D%22Icon%20feather-chevron-right%22%20d%3D%22M13.5%2C21.628a1%2C1%2C0%2C0%2C1-.707-1.707L17.9%2C14.814%2C12.793%2C9.707a1%2C1%2C0%2C0%2C1%2C1.414-1.414l5.814%2C5.814a1%2C1%2C0%2C0%2C1%2C0%2C1.414l-5.814%2C5.814A1%2C1%2C0%2C0%2C1%2C13.5%2C21.628Z%22%20transform%3D%22translate(-12.5%20-8)%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -6px;
+    border-right: 1px solid global.$color-text-black;
+    border-bottom: 1px solid global.$color-text-black;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+  }
+}
