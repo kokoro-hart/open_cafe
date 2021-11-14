@@ -1,0 +1,87 @@
+@use "foundation/global";
+
+// Project ドリンク
+//--------------------------------------------------------------------------
+.p-drinks {
+  margin-top: 24px;
+  
+  @include global.mq(xl) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img-wrapper {
+    display: inline-block;
+    max-width: 343px;
+    width: 100%;
+    margin-right: 61px;
+  }
+
+  &__img {
+    border: 8px solid global.$color-text-white;
+  }
+
+  &__body {
+    @include global.mq(md) {
+      width: 100%;
+    }
+  } 
+
+  &__list {
+    @include global.mq(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 40px;
+
+      @include global.mq(md) {
+        margin-top: 0;
+      }
+    }
+
+    @include global.mq(md) {
+      width: calc(33.3% - 48px * 2 /3);
+    }
+  }
+
+  &__cat {
+    border-bottom: 1px solid global.$color-text-black;
+    padding-bottom: 13px;
+    @include global.fz(16);
+    @include global.lh(1.18);
+    font-weight: 700;
+  }
+
+  &__sub-list {
+    margin-top: 15px;
+  }
+
+  &__sub-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
+  }
+
+  &__name {
+    @include global.fz(14);
+    @include global.lh(1.21);
+    font-weight: 700;
+  }
+
+  &__price {
+    padding-left: 5px;
+    @include global.fz(20);
+    @include global.lh(1.2);
+    font-weight: 400;
+    font-family: global.$font-family-en03;
+    white-space: nowrap;
+  }
+}
