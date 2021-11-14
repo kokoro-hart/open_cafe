@@ -1,0 +1,114 @@
+@use "foundation/global";
+
+// Project ギャラリー
+//--------------------------------------------------------------------------
+
+.p-gallery {
+  position: relative;
+  padding: 60px 0 100px;
+  background-color: global.$color-base01;
+
+  @include global.mq(md) {
+    padding: 80px 0 86px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -53px;
+    left: -23px;
+    width: 200px;
+    height: 104px;
+    background-image: url(../img/common/img-balloon02.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include global.mq(md) {
+      top: -22px;
+      left: calc(50% - 370px);
+      width: 265px;
+      height: 138px;
+    }
+  }
+
+  &__title-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__contents {
+    position: relative;
+    margin-top: 42px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -165px;
+      right: -38px;
+      width: 168px;
+      height: 142px;
+      background-image: url(../img/webp/bg-coffee02.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include global.mq(md) {
+        top: -650px;
+        right: -150px;
+        height: 330px;
+        width: 390px;
+      }
+    }
+  }
+
+  &__photos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include global.mq(md) {
+      &::before {
+        content: "";
+        width: calc(25% - 24px * 3 / 4);
+        order: 1;
+      }
+      &::after {
+        content: "";
+        width: calc(25% - 24px * 3 / 4);
+      }
+    }
+  }
+
+  &__photo {
+    width: calc(50% - 19px / 2);
+    margin-bottom: 19px;
+
+    @include global.mq(md) {
+      width: calc(25% - 24px * 3 / 4);
+      margin-bottom: 24px;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  &__img {        
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__link-wrapper {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+  }
+}
