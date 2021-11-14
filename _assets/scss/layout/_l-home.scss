@@ -38,4 +38,13 @@
       margin-top: 240px;
     }
   }
+
+  //ギャラリー
+  &__gallery {
+    margin-top: 180px;
+
+    @include global.mq(md) {
+      margin-top: 300px;
+    }
+  }
 }
