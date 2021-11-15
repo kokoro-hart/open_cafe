@@ -6,7 +6,7 @@
 //  ブレークポイント（モバイルファースト）
 //--------------------------------------------------------------------------
 $screen: (
-  xs: 0,
+  xs: 376px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -47,6 +47,39 @@ $screen: (
   }
 }
 
+// 表示行数の制御
+//--------------------------------------------------------------------------
+@mixin line-clamp($count: 3) {
+  // 引数が数値以外だったらエラーを返す
+  @if type-of($count) != 'number' {
+    @error 'line-clampの引数は必ず数値で指定してください';
+  }
+
+  @if $count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// object-fit
+//--------------------------------------------------------------------------
+@mixin object-fit($value: fill, $position: null) {
+  object-fit: $value;
+
+  @if $position {
+    object-position: $position;
+    font-family: 'object-fit: #{$value}; object-position: #{$position}', sans-serif;
+  }
+  @else {
+    font-family: 'object-fit: #{$value}', sans-serif;
+  }
+}
 
 //  フォントサイズ 行間の一括指定
 //--------------------------------------------------------------------------
