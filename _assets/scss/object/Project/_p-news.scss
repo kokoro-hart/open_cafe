@@ -1,0 +1,88 @@
+@use "foundation/global";
+
+// Project お知らせ
+//--------------------------------------------------------------------------
+
+.p-news {
+
+  &__title-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__contents {
+    position: relative;
+    margin-top: 42px;
+
+    @include global.mq(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -240px;
+      left: -52px;
+      width: 205px;
+      height: 185px;
+      background-image: url(../img/webp/bg-plate.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include global.browser('ie') {
+        background-image: url(../img/common/bg-plate.png);
+      }
+      @include global.browser('safari') {
+        background-image: url(../img/common/bg-plate.png);
+      }
+
+      @include global.mq(md) {
+        top: -390px;
+        left: -138px;
+        width: 354px;
+        height: 320px;
+      }
+    }
+  }
+
+  &__main {
+    width: 100%;
+
+    @include global.mq(md) {
+      width: calc(510 / 1100 * 100%);
+    }
+  }
+
+  &__other {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    @include global.mq(md) {
+      width: calc(560 / 1100 * 100%);
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    width: calc(50% - 5.37% / 2);
+    margin-bottom: 20px;
+
+    @include global.mq(md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+
+    @include global.mq(md) {
+      margin-top: 30px;
+    }
+  }
+}
