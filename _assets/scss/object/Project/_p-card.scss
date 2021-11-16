@@ -3,7 +3,7 @@
 // Project カード
 //--------------------------------------------------------------------------
 
-//スペシャルランチ
+//スペシャルランチカード
 .p-card-lunch {
   &__img-wrapper {
     position: relative;
@@ -17,8 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include global.object-fit(cover, center);
   }
 
   &__body {
@@ -51,14 +50,11 @@
   }
 
   &__title {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     width: calc(100% - (24px + 6px));
     margin-left: 6px;
     @include global.fz(14, 18);
     @include global.lh(1.4);
+    @include global.line-clamp(2);
     font-weight: 700;
 
     @include global.mq(md) {
@@ -68,7 +64,7 @@
   }
 }
 
-//グランドメニュー
+//グランドメニューカード
 .p-card-menu {
   &__img-wrapper {
     position: relative;
@@ -84,18 +80,14 @@
     border: 8px solid global.$color-text-white;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include global.object-fit(cover, center);
   }
 
-  &__title {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  &__title {    
     margin-top: 6px;
     @include global.fz(14, 20);
     @include global.lh(1.2);
+    @include global.line-clamp(2);
     font-weight: 700;
 
     @include global.mq(md) {
@@ -112,6 +104,146 @@
 
     @include global.mq(md) {
       font-weight: 700;
+    }
+  }
+}
+
+//お知らせカード
+.p-card-news {
+  $this: &;
+  position: relative;
+  display: inline-block;
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: calc(209 / 335 * 100%);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include global.object-fit(cover, center);
+  }
+
+  &__cat {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    padding: 3px 12px 3px 10px ;
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+    @include global.fz(12);
+    @include global.lh(1.2);
+    font-weight: 700;
+
+    @include global.mq(md) {
+      padding: 5px 12px 5px 14px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-color: transparent global.$color-text-gray transparent transparent;
+      border-style: solid;
+      border-width: 0 8px 4px 0;
+      height: 0;
+      width: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -8px;
+      z-index: 1;
+      border-color: global.$color-main transparent global.$color-main global.$color-main;
+      border-style: solid;
+      border-width: 13px 8px 12px 0px;
+      width: 0px;
+      height: 0px;
+
+      @include global.mq(md) {
+        border-width: 12px 8px 12px 0px;
+      }
+    }
+  }
+
+  &__body {
+    margin-top: 8px;
+
+    @include global.mq(md) {
+      margin-top: 10px;
+    }
+  }
+
+  &__title {
+    @include global.fz(12, 14);
+    @include global.lh(1.5, 1.7);
+    @include global.line-clamp(3);
+    font-weight: 700;
+  }
+
+  &__excerpt {
+    margin-top: 11px;
+    @include global.fz(12,14);
+    @include global.lh(1.5, 2);
+    @include global.line-clamp(4);
+
+    @include global.mq(md) {
+      @include global.line-clamp(3);
+    }
+  }
+
+  &__date {
+    margin-top: 7px;
+    display: inline-block;
+    @include global.fz(12);
+    @include global.lh(1);
+
+    @include global.mq(md) {
+      margin-top: 11px;
+    }
+  }
+
+  //--large
+  &--large {
+
+    #{$this}__cat {
+      top: 20px;
+      padding: 4px 13px 4px 11px;
+      @include global.fz(12, 16);
+
+      @include global.mq(md) {
+        padding: 6px 14px 6px 12px;
+
+        &::after {
+          border-width: 16px 8px 15px 0px;
+        }
+      }
+    }
+
+    #{$this}__body {
+      
+      @include global.mq(md) {
+        margin-top: 12px;
+      }
+    }
+
+    #{$this}__title {
+      @include global.fz(14, 20);
+      @include global.lh(1.7, 1.6);
+    }
+
+    #{$this}__date {
+      margin-top: 12px;
+      @include global.fz(12, 14);
     }
   }
 }
