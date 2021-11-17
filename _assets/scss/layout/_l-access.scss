@@ -1,0 +1,14 @@
+@use "foundation/global";
+
+// Layout アクセス
+//--------------------------------------------------------------------------
+
+.l-access {
+  margin-top: 160px;
+  padding: 76px 0 80px;
+  background-color: global.$color-base01;
+
+  @include global.mq(md) {
+    margin-top: 176px;
+  } 
+}

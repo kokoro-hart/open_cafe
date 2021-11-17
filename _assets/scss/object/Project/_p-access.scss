@@ -1,0 +1,150 @@
+@use "foundation/global";
+
+// Project アクセス
+//--------------------------------------------------------------------------
+
+.p-access {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: -38px;
+    top: -170px;
+    height: 180px;      
+    width: 188px;
+    background-image: url(../img/webp/bg-bread.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;      
+
+    @include global.browser('ie') {
+      background-image: url(../img/common/bg-bread.png);
+    }
+    @include global.browser('safari') {
+      background-image: url(../img/common/bg-bread.png);
+    }
+
+    @include global.mq(md) {
+      top: -250px;
+      right: -73px;
+      height: 359px;
+      width: 374px;
+    }
+  }     
+
+  &__title-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 688px;
+    width: 100%;
+    margin: 40px auto 0;
+    padding: 0 20px;
+
+    @include global.mq(md) {
+      max-width: 768px;
+      padding: 0 40px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -223px;
+      left: calc(50% - 215px);
+      width: 200px;
+      height: 172px;
+      background-image: url(../img/webp/img-balloon03.webp);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include global.browser('ie') {
+        background-image: url(../img/common/bg-bread.png);
+      }
+      @include global.browser('safari') {
+        background-image: url(../img/common/bg-bread.png);
+      }
+
+      @include global.mq(md) {
+        top: -257px;
+        left: calc(50% - 305px);
+        width: 234px;
+        height: 200px;
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    border: 5px solid global.$color-text-white;
+    width: 100%;
+    padding-top: calc(367 / 668 * 100%);
+
+    @include global.mq(md) {
+      border-width: 10px;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    margin-top: 40px;
+
+    @include global.mq(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__dl {
+    &:not(:first-child) {
+      margin-top: 19px;
+
+      @include global.mq(md) {
+        margin-top: 0;
+      }
+    }
+
+    @include global.mq(md) {
+      width: calc(50% - 40px / 2);
+    }
+  }
+
+  &__row {
+    display: flex;
+    border-bottom: 1px solid global.$color-text-black;
+    padding-bottom: 12px;
+    font-weight: 700;
+
+    &:not(:first-child) {
+      margin-top: 19px;
+    }
+  }
+
+  &__dt {
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    @include global.fz(14);
+  }
+
+  &__dd {
+    padding-right: 12px;
+    @include global.fz(14);
+    @include global.lh(1.7);
+  }
+}
