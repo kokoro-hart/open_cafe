@@ -1,0 +1,55 @@
+@use "foundation/global";
+
+// Project フッター
+//--------------------------------------------------------------------------
+
+.p-footer {
+  background-color: global.$color-main;
+
+  &__inner {
+    position: relative;
+    padding: 40px 0 20px;
+
+    @include global.mq(md) {
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: -47px;
+      width: 126px;
+      height: 114px;
+      background-image: url(../img/webp/bg-coffee03.webp);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include global.browser('ie') {
+        background-image: url(../img/common/bg-coffee03.png);
+      }
+      @include global.browser('safari') {
+        background-image: url(../img/common/bg-coffee03.png);
+      }
+
+      @include global.mq(md) {
+        left: -67px;
+        top: -120px;
+        width: 243px;
+        height: 266px;        
+      }
+    }
+  }
+  
+  &__copyright {
+    width: 100%;
+    margin-top: 37px;
+    color: global.$color-text-white;
+    @include global.fz(12);
+    @include global.lh(2);
+    text-align: center;
+  }
+}
