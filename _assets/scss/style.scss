@@ -4,24 +4,59 @@
 
 /* Foundation
    ----------------------------------------------------------------- */
-// base
 @use "foundation/base";
 
 /* Layout (prefix: l- )
    ----------------------------------------------------------------- */
-@use "layout/layout";
-@use "layout/header";
-@use "layout/footer";
+@use "layout/l-header";
+@use "layout/l-home";
+@use "layout/l-inner";
+@use "layout/l-access";
 
 /* Component (prefix: c- )
    ----------------------------------------------------------------- */
-@use "object/component/nav";
+@use "object/component/c-button-drawer";
+@use "object/component/c-button-primary";
+@use "object/component/c-section-title";
 
 /* Project (prefix: p- )
    ----------------------------------------------------------------- */
-@use "object/Project/index";
+@use "object/Project/p-header";
+@use "object/Project/p-header-menu";
+
+@use "object/Project/p-mv";
+@use "object/Project/p-mv-menu";
+@use "object/Project/p-mv-slider";
+@use "object/Project/p-mv-nav";
+
+@use "object/Project/p-sns";
+@use "object/Project/p-global-nav";
+
+@use "object/Project/p-concept";
+
+@use "object/Project/p-lunch";
+@use "object/Project/p-lunch-detail";
+@use "object/Project/p-lunch-info";
+
+@use "object/Project/p-grand-menu";
+@use "object/Project/p-drinks";
+
+@use "object/Project/p-card-lunch";
+@use "object/Project/p-card-menu";
+@use "object/Project/p-card-news";
+
+@use "object/Project/p-gallery";
+
+@use "object/Project/p-news";
+
+@use "object/Project/p-access";
+
+@use "object/Project/p-footer";
 
 /* Utitlity (prefix: u- )
    ----------------------------------------------------------------- */
-@use "object/utility/utilities";
 @use "object/utility/hidden";
+
+/* External
+   ----------------------------------------------------------------- */
+@use "external/swiper";

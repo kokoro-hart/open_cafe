@@ -3,44 +3,47 @@
 // Project sns
 //--------------------------------------------------------------------------
 
-.p-sns {
-  &__list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.p-sns__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-sns__item {
+  width: 24px;
+  height: 24px;
+
+  &:not(:first-child) {
+    margin-left: 24px;
   }
+}
 
-  &__item {
-    width: 24px;
-    height: 24px;
+.p-sns__item--big {
+  width: 32px;
+  height: 32px;
 
-    &:not(:first-child) {
-      margin-left: 24px;
-    }
-  }
-
-  &__item--big {
+  @include global.mq(md) {
     width: 40px;
     height: 40px;
-
-    &:not(:first-child) {
-      margin-left: 32px;
-    }
   }
 
-  &__link {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.3s;
-
-    &:hover {
-      opacity: 0.8;
-    }
+  &:not(:first-child) {
+    margin-left: 32px;
   }
+}
 
-  &__icon {
-    width: 100%;
-    height: 100%;
+.p-sns__link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
   }
+}
+
+.p-sns__icon {
+  width: 100%;
+  height: 100%;
 }

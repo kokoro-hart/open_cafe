@@ -1,0 +1,75 @@
+@use "foundation/global";
+
+// External swiperのクラスへの上書き
+//--------------------------------------------------------------------------
+
+.p-mv-slider {
+  $this: &;
+
+  //コンテナ
+  .swiper {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    list-style: none;
+
+    @include global.mq(md, max) {
+      height: 100vh;
+    }
+  }
+
+  //ページネーション
+  .swiper-pagination {
+    text-align: left;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 12px;
+    left: 12px;
+
+    @include global.mq(md) {
+      bottom: 72px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+    background-color: global.$color-text-white;
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: global.$color-current;
+  }
+
+  //画像
+  .slide-img img {
+    display: block;
+  }
+
+  //アニメーション
+  .swiper-slide-prev,
+  .swiper-slide-active,
+  .swiper-slide-duplicate-active {
+    #{$this}__picture {
+      #{$this}__img {
+        animation: zoomUp 15s infinite;
+      }
+    }
+  }
+  @keyframes zoomUp {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.15);
+    }
+  }
+}

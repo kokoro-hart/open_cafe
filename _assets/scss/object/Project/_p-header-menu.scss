@@ -1,0 +1,41 @@
+@use "foundation/global";
+
+// Project ヘッダーメニュー
+//--------------------------------------------------------------------------
+
+.p-header-menu {
+  position: fixed;
+  top: 0;
+  right: -375px;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 375px;
+  width: 100%;
+  height: 100vh;
+  padding: 10px 15px;
+  background-color: global.$color-main;
+  color: global.$color-text-white;
+  transition: right 0.5s, opacity 0.5s;
+}
+
+.p-header-menu__nav {
+  max-width: 240px;
+  width: 100%;
+  margin: 63px auto 0;
+  padding-left: 30px;
+
+  @include global.mq(xs) {
+    max-width: 100%;
+  }
+}
+
+.p-header-menu__sns {
+  margin-top: 60px;
+}
+
+//ドロワーアクティブ時
+.p-header-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+  right: 0;
+}

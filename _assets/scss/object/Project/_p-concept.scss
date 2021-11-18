@@ -4,15 +4,15 @@
 //--------------------------------------------------------------------------
 
 .p-concept {
+  position: relative;
   padding-bottom: 69px;
-  
 
   @include global.mq(md) {
     padding-bottom: 88px;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
@@ -30,78 +30,74 @@
       width: 90vw;
     }
   }
-  
-  &__inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column-reverse;
-    @include global.mq(md) {
-      flex-direction: row;
-      justify-content: space-between;
-      margin-right: auto;
-      max-width: 1190px;
-    }
+}
+
+.p-concept__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 1;
+
+  @include global.mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1190px;
+    margin-right: auto;
   }
+}
 
-  &__contents {
-    width: 100%;
-    padding: 0 20px;
+.p-concept__contents {
+  width: 100%;
+  padding: 0 20px;
 
-    @include global.mq(md) {
-      max-width: 470px;
-      margin: 0 40px;
-      padding: 14px 0 0;
-    }
+  @include global.mq(md) {
+    max-width: 470px;
+    margin: 0 40px;
+    padding: 14px 0 0;
   }
+}
 
-  &__body {
-    margin-top: 33px;
+.p-concept__body {
+  margin-top: 33px;
 
-    @include global.mq(md) {
-      margin-top: 49px;
-    }
+  @include global.mq(md) {
+    margin-top: 49px;
   }
+}
 
-  &__title {
-    @include global.fz(20, 28);
-    @include global.lh(2, 2.14);
-    font-weight: 700;
+.p-concept__title {
+  @include global.fz(20, 28);
+  @include global.lh(2, 2.14);
+  font-weight: 700;
+}
+
+.p-concept__text {
+  margin-top: 30px;
+  @include global.fz(14);
+  @include global.lh(2);
+
+  @include global.mq(md) {
+    margin-top: 45px;
   }
+}
 
-  &__text {
-    margin-top: 30px;
-    @include global.fz(14);
-    @include global.lh(2);
+.p-concept__link-wrapper {
+  width: 100%;
+  margin-top: 57px;
+  text-align: center;
 
-    @include global.mq(md) {
-      margin-top: 45px;
-    }
+  @include global.mq(md) {
+    text-align: left;
   }
+}
 
-  &__link-wrapper {
-    width: 100%;
-    margin-top: 57px;
-    text-align: center;
+.p-concept__picture {
+  display: inline-block;
+  margin-top: 86px;
+  width: 84%;
 
-    @include global.mq(md) {
-      text-align: left;
-    }
-  }
-
-  &__picture {
-    display: inline-block;
-    margin-top: 86px;
-    width: 84%;
-
-    @include global.mq(md) {
-      width: 50.42017%;
-      margin-top: 0;
-    }
-  }
-
-  &__img {
-    height: 100%;
-    height: auto;
+  @include global.mq(md) {
+    width: 50.42017%;
+    margin-top: 0;
   }
 }

@@ -1,0 +1,36 @@
+@use "foundation/global";
+
+// Project メインビジュアルナビゲーション
+//--------------------------------------------------------------------------
+
+.p-mv-nav__item {
+  &:not(:first-child) {
+    margin-top: 36px;
+  }
+}
+
+.p-mv-nav__link {
+  display: block;
+  font-family: global.$font-family-en02;
+  font-weight: 400;
+  text-align: center;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.p-mv-nav__text-en {
+  display: block;
+  @include global.fz(16);
+  @include global.lh(1.12);
+  letter-spacing: 1.92px;
+}
+
+.p-mv-nav__text-ja {
+  display: block;
+  margin-top: 7px;
+  @include global.fz(10);
+  @include global.lh(1.2);
+}
