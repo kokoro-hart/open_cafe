@@ -1,4 +1,14 @@
+//setting
 @forward "tools/fonts";
 @forward "tools/variables";
-@forward "tools/mixins";
+
+//mixins
+@forward "mixins/breakpoint";
+@forward "mixins/browser";
+@forward "mixins/line-clamp";
+@forward "mixins/object-fit";
+@forward "mixins/font-size";
+@forward "mixins/line-height";
+
+//functions
 @forward "tools/functions";
