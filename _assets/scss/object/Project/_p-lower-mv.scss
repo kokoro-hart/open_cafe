@@ -1,0 +1,90 @@
+@use "foundation/global";
+
+// Project 下層ページメインビジュアル
+//--------------------------------------------------------------------------
+
+.p-lower-mv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 32vw;
+
+  @include global.mq(md) {
+    height: 320px;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    border: 1px solid global.$color-text-white;
+    height: calc(100% - 22px);
+    width: calc(100% - 22px);
+
+    @include global.mq(md) {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+    }
+  }
+
+  &::before {
+    border: 2px solid global.$color-text-white;
+    height: calc(100% - 11px);
+    width: calc(100% - 11px);
+    z-index: 1;
+
+    @include global.mq(md) {
+      width: calc(100% - 18px);
+      height: calc(100% - 18px);
+    }
+  }
+}
+
+.p-lower-mv__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.p-lower-mv__img {
+  width: 100%;
+  height: 100%;
+  @include global.object-fit(cover, center);
+}
+
+.p-lower-mv__heading {
+  position: relative;
+  z-index: 1;
+  color: global.$color-text-white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.p-lower-mv__head {
+  padding-left: 8px;
+  @include global.fz(32, 72);
+  @include global.lh(1.27);
+  font-family: global.$font-family-en01;
+  letter-spacing: 5px;
+
+  @include global.mq(md) {
+    letter-spacing: 14.4px;
+  }
+}
+
+.p-lower-mv__lead {
+  @include global.fz(12, 16);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
