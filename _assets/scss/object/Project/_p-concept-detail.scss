@@ -1,0 +1,74 @@
+@use "foundation/global";
+
+// Project 下層ページのコンセプトブロック
+//--------------------------------------------------------------------------
+
+.p-concept-detail {
+  $this: &;
+  position: relative;
+
+  //左右反転
+  &--reverse {
+    #{$this}__inner {
+      @include global.mq(md) {
+        flex-direction: row;
+      }
+    }
+
+    #{$this}__contents {
+      margin-right: 0;
+      margin-left: 6.36364%;
+    }
+  }
+}
+
+.p-concept-detail__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 1;
+
+  @include global.mq(md) {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.p-concept-detail__picture {
+  width: 100%;
+  margin-top: 36px;
+
+  @include global.mq(md) {
+    max-width: 640px;
+    margin-top: 0;
+  }
+}
+
+.p-concept-detail__img {
+  width: 100%;
+  @include global.object-fit(cover, center);
+}
+
+.p-concept-detail__contents {
+  @include global.mq(md) {
+    margin-right: 6.36364%;
+    max-width: 390px;
+  }
+  
+}
+
+.p-concept-detail__title {
+  @include global.fz(20, 28);
+  @include global.lh(2, 2.14);
+  font-weight: 700;
+}
+
+.p-concept-detail__text {
+  margin-top: 30px;
+  @include global.fz(14);
+  @include global.lh(2);
+
+  @include global.mq(md) {
+    margin-top: 23px;
+  }
+}
