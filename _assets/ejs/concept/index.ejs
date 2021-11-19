@@ -1,0 +1,108 @@
+<% let pageId='concept' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class=" l-main">
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-concept.webp" type="image/webp" />
+            <img src="/img/common/img-mv-concept.jpeg" class="p-lower-mv__img" decoding="async" width="1280" height="320" alt="コンセプトメインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">CONCEPT</p>
+            <p class="p-lower-mv__lead">当店のこだわり</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/concept/"><span itemprop="name">当店のこだわり</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-lower-concept">
+          <section class="p-concept-detail l-lower-concept__detail">
+            <div class="p-concept-detail__inner">
+              <picture class="p-concept-detail__picture">
+                <source class="p-concept-detail__img" srcset="/img/webp/img-concept02.webp" type="image/webp" />
+                <img src="/img/common/img-concept02.png" class="p-concept-detail__img" width="640" height="730" decoding="async" alt="コンセプトイメージ">
+              </picture>
+              <div class="p-concept-detail__contents">                
+                <h2 class="p-concept-detail__title">
+                  美味しいコーヒーと食事で、<br>最高のひとときを。
+                </h2>
+                <p class="p-concept-detail__text">
+                  ダミー_国内外から賞賛を
+                  <br>
+                  受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                  <br>
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                  <br>
+                  <br>
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                </p>                  
+              </div>
+          
+            </div>
+          </section>
+
+          <section class="p-concept-detail p-concept-detail--reverse l-lower-concept__detail">
+            <div class="p-concept-detail__inner">
+              <picture class="p-concept-detail__picture">
+                <source class="p-concept-detail__img" srcset="/img/webp/img-concept03.webp" type="image/webp" />
+                <img data-src="/img/common/img-concept03.png" class="p-concept-detail__img lazyload" width="640" height="537" alt="コンセプトイメージ">
+              </picture>
+              <div class="p-concept-detail__contents">                
+                <h2 class="p-concept-detail__title">
+                  本場イタリアで培った<br>自慢のパスタ
+                </h2>
+                <p class="p-concept-detail__text">
+                  ダミー_国内外から賞賛を
+                  <br>
+                  受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                  <br>
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                  <br>
+                  <br>
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                </p>                  
+              </div>
+          
+            </div>
+          </section>
+
+          <section class="p-concept-detail l-lower-concept__detail">
+            <div class="p-concept-detail__inner">
+              <picture class="p-concept-detail__picture">
+                <source class="p-concept-detail__img" srcset="/img/webp/img-concept04.webp" type="image/webp" />
+                <img data-src="/img/common/img-concept04.jpeg" class="p-concept-detail__img lazyload" width="640" height="400" decoding="async"
+                  alt="コンセプトイメージ">
+              </picture>
+              <div class="p-concept-detail__contents">                
+                <h2 class="p-concept-detail__title">
+                  ほどよい甘さの<br>自家製こだわりクロワッサン
+                </h2>
+                <p class="p-concept-detail__text">
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。<br>
+                  ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                </p>                  
+              </div>
+          
+            </div>
+          </section>
+        </div>
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
