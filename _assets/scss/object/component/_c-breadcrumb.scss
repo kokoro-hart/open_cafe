@@ -1,0 +1,44 @@
+@use "foundation/global";
+
+// Component パンくずリスト
+//--------------------------------------------------------------------------
+
+.c-breadcrumb {
+  width: calc(90% + 40px);
+}
+
+.c-breadcrumb__list {
+  display: flex;
+}
+
+.c-breadcrumb__item {
+  margin-right: 8px;
+  @include global.fz(12, 14);
+  @include global.lh(1.4);
+  font-weight: 700;
+
+  @include global.mq(md) {
+    margin-right: 20px;
+  }
+
+  &:not(:first-child) {
+    position: relative;
+    padding-left: 13px;
+
+    @include global.mq(md) {
+      padding-left: 24px;
+    }
+
+    &::after {
+      content: ">";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.c-breadcrumb__link {
+  display: inline-block;
+}
