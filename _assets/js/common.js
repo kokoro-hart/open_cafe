@@ -8,6 +8,33 @@
 //slickを使うとき
 // import '@modules/slick-carousel';
 
+//画像遅延読み込み
+const lazy = document.querySelectorAll('.lazyload');
+const lazyObserver = new IntersectionObserver(inViewport, {
+  rootMargin: '50%',
+  threshold: [0]
+});
+
+Array.from(lazy).forEach(element => {
+  lazyObserver.observe(element);
+});
+
+function inViewport(entries, observer) {
+  entries.forEach(entry => {
+
+    if (entry.intersectionRatio > 0) {
+      const imgElement = entry.target;
+      imgElement.src = imgElement.dataset.src;
+
+      imgElement.addEventListener('load', () => {
+        imgElement.classList.add('is-lazyloaded');
+      });
+
+      lazyObserver.unobserve(entry.target);
+    }
+  });
+}
+
 //ビューポート幅360px以下はリサイズして表示
 !(function () {
   const viewport = document.querySelector('meta[name="viewport"]');
