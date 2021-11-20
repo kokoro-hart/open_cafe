@@ -1,0 +1,60 @@
+@use "foundation/global";
+
+// Projectメニュー タブ
+//--------------------------------------------------------------------------
+
+.p-menu-tab__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.p-menu-tab__item {
+  width: calc(50% - 13px / 2);
+  margin-bottom: 12px;
+  height: 64px;
+  text-align: center;
+
+  @include global.mq(md) {
+    width: calc(25% - 14px * 3 / 4);
+    height: 69px;
+  }
+
+  &.is-current {
+    .p-menu-tab__link {
+      background-color: global.$color-main;
+    }
+  }
+}
+
+.p-menu-tab__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  background-color: global.$color-text-gray;
+  color: global.$color-text-white;
+  @include global.fz(16);
+  @include global.lh(1.25);
+  font-weight: 700;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: global.$color-main;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid global.$color-text-white;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    pointer-events: none;
+  }
+}

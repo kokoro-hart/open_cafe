@@ -1,0 +1,201 @@
+<% let pageId='menu' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class="p-menu">
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-menu.webp" type="image/webp" />
+            <img src="/img/common/img-mv-menu.jpeg" class="p-lower-mv__img" decoding="async" width="1280"
+              height="320" alt="メニューメインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">MENU</p>
+            <p class="p-lower-mv__lead">メニュー</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/menu/"><span itemprop="name">メニュー</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-lower-menu">
+          <div class="l-inner">
+            <div class="p-menu-tab l-lower-menu__tab">
+              <ul class="p-menu-tab__list">
+                <li class="p-menu-tab__item">
+                  <a href="" class="p-menu-tab__link">
+                    パスタ
+                  </a>
+                </li>
+                <li class="p-menu-tab__item">
+                  <a href="" class="p-menu-tab__link">
+                    サラダ
+                  </a>
+                </li>
+                <li class="p-menu-tab__item">
+                  <a href="" class="p-menu-tab__link">
+                    パン&<br>スイーツ
+                  </a>
+                </li>
+                <li class="p-menu-tab__item">
+                  <a href="" class="p-menu-tab__link">
+                    ドリンク
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="p-menu-list l-lower-menu__list">
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-pasta01.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-pasta02.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-pasta03.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-pasta04.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-pasta05.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-salad01.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風サラダ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-salad02.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">テキストテキストテキストの○○○○風サラダ</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-sweets01.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">チョコサンド</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-sweets02.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">チョコサンド</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-sweets03.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">チョコサンド</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-sweets04.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">チョコサンド</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-sweets05.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">チョコサンド</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-drink02.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">○○ドリンク</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-drink03.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">○○ドリンク</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-drink04.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">○○ドリンク</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+              <li class="p-menu-list__item p-card-menu p-card-menu--archive">
+                <div class="p-card-menu__img-wrapper">
+                  <img data-src="/img/common/img-drink05.jpeg" alt="メニューの画像" width="245" height="245"
+                    class="p-card-menu__img lazyload">
+                </div>
+                <p class="p-card-menu__title">○○ドリンク</p>
+                <p class="p-card-menu__price">780 yen</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
