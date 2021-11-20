@@ -23,7 +23,7 @@
 .p-card-menu__title {
   margin-top: 6px;
   @include global.fz(14, 20);
-  @include global.lh(1.2);
+  @include global.lh(1.5);
   @include global.line-clamp(2);
   font-weight: 700;
 
@@ -33,7 +33,6 @@
 }
 
 .p-card-menu__price {
-  margin-top: 4px;
   @include global.fz(24, 32);
   @include global.lh(1.2);
   font-weight: 400;
@@ -41,5 +40,29 @@
 
   @include global.mq(md) {
     font-weight: 700;
+  }
+}
+
+//--archive
+.p-card-menu {
+  $this: &;
+
+  &--archive {
+    #{$this}__img {
+      border: none;
+    }
+
+    #{$this}__title {
+      @include global.fz(14);
+    }
+
+    #{$this}__price {
+      @include global.fz(24);
+      text-align: center;
+
+      @include global.mq(md) {
+        font-weight: 400;
+      }
+    }
   }
 }
