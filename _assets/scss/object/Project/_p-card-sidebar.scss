@@ -1,0 +1,58 @@
+@use "foundation/global";
+
+// Project サイドバー カード
+//--------------------------------------------------------------------------
+
+.p-card-sidebar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.p-card-sidebar__img-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(100 / 295 * 100%);
+  width: calc(100 / 295 * 100%);
+
+  @include global.mq(md) {
+    padding-top: calc(100 / 260 * 100%);
+    width: calc(100 / 260 * 100%);
+  }
+}
+
+.p-card-sidebar__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include global.object-fit(cover, center);
+}
+
+.p-card-sidebar__body {
+  width: calc(182 / 295 * 100%);
+
+  @include global.mq(md) {
+    width: calc(146 / 260 * 100%);
+  }
+}
+
+.p-card-sidebar__title {
+  @include global.fz(14);
+  @include global.lh(1.71);
+  @include global.line-clamp(3);
+  font-weight: 700;
+}
+
+.p-card-sidebar__date {
+  margin-top: 12px;
+  @include global.fz(12);
+  @include global.lh(1);
+  white-space: nowrap;
+}

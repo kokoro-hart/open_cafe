@@ -6,7 +6,7 @@
 .p-card-news {
   $this: &;
   position: relative;
-  display: inline-block;
+  display: block;
   &:hover {
     #{$this}__img {
       transform: scale(1.05, 1.05);
@@ -46,6 +46,7 @@
   @include global.fz(12);
   @include global.lh(1.2);
   font-weight: 700;
+  z-index: 1;
 
   @include global.mq(md) {
     padding: 5px 12px 5px 14px;
@@ -149,6 +150,18 @@
 
   .p-card-news__date {
     margin-top: 12px;
+    @include global.fz(12, 14);
+  }
+}
+
+//--archive 
+.p-card-news--archive {
+  
+  .p-card-news__title {
+    @include global.fz(12, 16);
+  }
+
+  .p-card-news__cat {
     @include global.fz(12, 14);
   }
 }

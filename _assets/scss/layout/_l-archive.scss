@@ -1,0 +1,38 @@
+@use "foundation/global";
+
+// Layout アーカイブ
+//--------------------------------------------------------------------------
+
+.l-archive {
+  margin-top: 60px;
+
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+}
+
+.l-archive__main {
+  @include global.mq(md) {
+    width: calc(100% - 6% - 270px);
+  }
+
+  @include global.mq(lg) {
+    width: calc(100% - 6% - 300px);
+  }
+}
+
+.l-archive__sidebar {
+  width: 100%;
+  margin-top: 60px;
+
+  @include global.mq(md) {
+    max-width: 270px;
+    margin-top: 0;
+  }
+
+  @include global.mq(lg) {
+    max-width: 300px;
+  }
+}

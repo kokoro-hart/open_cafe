@@ -1,0 +1,52 @@
+@use "foundation/global";
+
+// Project サイドバー カテゴリ
+//--------------------------------------------------------------------------
+
+.p-sidebar-cat {
+
+}
+
+.p-sidebar-cat__list {
+  
+}
+
+.p-sidebar-cat__item {
+  
+
+  &:not(:first-child) {
+    margin-top: 22px;
+  }
+}
+
+.p-sidebar-cat__link {
+  position: relative;
+  display: block;
+  padding-left: 12px;
+  @include global.fz(16);
+  @include global.lh(1.18);
+  font-weight: 700;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+    &::before {
+      transform: translate(2px, -50%);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 12px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%226.277%22%20height%3D%2211.735%22%20viewBox%3D%220%200%206.277%2011.735%22%3E%20%3Cpath%20id%3D%22Icon_metro-chevron-thin-right%22%20data-name%3D%22Icon%20metro-chevron-thin-right%22%20d%3D%22M16.692%2C9.568%2C11.82%2C4.506a.475.475%2C0%2C0%2C1%2C0-.668.465.465%2C0%2C0%2C1%2C.661%2C0l5.342%2C5.4a.475.475%2C0%2C0%2C1%2C0%2C.668l-5.342%2C5.4a.464.464%2C0%2C0%2C1-.661%2C0%2C.475.475%2C0%2C0%2C1%2C0-.668l4.872-5.06Z%22%20transform%3D%22translate(-11.683%20-3.7)%22%2F%3E%3C%2Fsvg%3E');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s;
+  }
+}

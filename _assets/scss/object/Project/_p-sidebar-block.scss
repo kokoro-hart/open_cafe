@@ -1,0 +1,46 @@
+@use "foundation/global";
+
+// Project サイドバー ブロック
+//--------------------------------------------------------------------------
+
+.p-sidebar-block {
+  background-color: global.$color-text-white;
+  padding: 20px;
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+
+.p-sidebar-block__title {
+  position: relative;
+  @include global.fz(20);
+  @include global.lh(1.4);
+  padding-bottom: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 1px;
+    background-color: global.$color-text-black;
+  }
+}
+
+.p-sidebar-block__items {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.p-sidebar-block__item {
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+.p-sidebar-block__cat {
+  width: 100%;
+  margin-top: 20px;
+}

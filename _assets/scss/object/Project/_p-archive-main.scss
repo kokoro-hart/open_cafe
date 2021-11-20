@@ -1,0 +1,42 @@
+@use "foundation/global";
+
+// Project アーカイブ
+//--------------------------------------------------------------------------
+
+.p-archive-main__title {
+  @include global.fz(20, 24);
+  @include global.lh(2);
+  font-weight: 700;
+}
+
+.p-archive-main__items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 20px;
+    padding-left: 8px;
+  }
+}
+
+.p-archive-main__item {
+  width: calc(50% - 19px / 2);
+  margin-bottom: 20px;
+
+  @include global.mq(md) {
+    width: calc(50% - 40px / 2);
+    margin-bottom: 32px;
+  }
+}
+
+.p-archive-main__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  @include global.mq(md) {
+    margin-top: 10px;
+  }
+}

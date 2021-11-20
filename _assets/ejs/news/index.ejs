@@ -1,0 +1,253 @@
+<% let pageId='news' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class="p-archive">
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-news_sp.webp" media="(max-width: 767px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-news_pc.webp" media="(min-width: 768px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/common/img-mv-news_sp.jpeg" media="(max-width: 767px)" />
+            <img src="/img/common/img-mv-news_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async"
+              alt="お知らせメインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">NEWS</p>
+            <p class="p-lower-mv__lead">お知らせ</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/news/"><span itemprop="name">お知らせ</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-inner">
+          <div class="l-archive">
+            <article class="p-archive-main l-archive__main">
+              <h2 class="p-archive-main__title">カテゴリ名</h2>
+              <div class="p-archive-main__items">
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+                <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+                  <div class="p-card-news__img-wrapper">
+                    <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+                  </div>
+                  <p class="p-card-news__cat">カテゴリ</p>
+                  <div class="p-card-news__body">
+                    <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
+                    <p class="p-card-news__date">2021.01.01</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="p-archive-main__pagination c-pagination">
+                <a href="" class="prev page-numbers">                  
+                </a>
+                <a href="" class="page-numbers current">1</a>
+                <a href="" class="page-numbers">2</a>
+                <a href="" class="page-numbers">3</a>
+                <a href="" class="next page-numbers">                  
+                </a>
+              </div>
+            </article>
+
+            <aside class="p-sidebar l-archive__sidebar">
+              <article class="p-sidebar-block">
+                <h2 class="p-sidebar-block__title">最近の記事</h2>
+                <div class="p-sidebar-block__items">
+                  <a href="" class="p-sidebar-block__item p-card-sidebar">
+                    <div class="p-card-sidebar__img-wrapper">
+                      <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+                    </div>                    
+                    <div class="p-card-sidebar__body">
+                      <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                      </h3>
+                      <p class="p-card-sidebar__date">2021.01.01</p>
+                    </div>
+                  </a>
+                  <a href="" class="p-sidebar-block__item p-card-sidebar">
+                    <div class="p-card-sidebar__img-wrapper">
+                      <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+                    </div>                    
+                    <div class="p-card-sidebar__body">
+                      <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                      </h3>
+                      <p class="p-card-sidebar__date">2021.01.01</p>
+                    </div>
+                  </a>
+                  <a href="" class="p-sidebar-block__item p-card-sidebar">
+                    <div class="p-card-sidebar__img-wrapper">
+                      <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+                    </div>                    
+                    <div class="p-card-sidebar__body">
+                      <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                      </h3>
+                      <p class="p-card-sidebar__date">2021.01.01</p>
+                    </div>
+                  </a>
+                  <a href="" class="p-sidebar-block__item p-card-sidebar">
+                    <div class="p-card-sidebar__img-wrapper">
+                      <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+                    </div>                    
+                    <div class="p-card-sidebar__body">
+                      <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                      </h3>
+                      <p class="p-card-sidebar__date">2021.01.01</p>
+                    </div>
+                  </a>
+                  <a href="" class="p-sidebar-block__item p-card-sidebar">
+                    <div class="p-card-sidebar__img-wrapper">
+                      <img data-src="/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+                    </div>                    
+                    <div class="p-card-sidebar__body">
+                      <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+                      </h3>
+                      <p class="p-card-sidebar__date">2021.01.01</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+
+              <article class="p-sidebar-block">
+                <h2 class="p-sidebar-block__title">カテゴリ</h2>
+                <div class="p-sidebar-block__cat">
+                  <ul class="p-sidebar-cat">
+                    <li class="p-sidebar-cat__item">
+                      <a href="" class="p-sidebar-cat__link">
+                        カテゴリ
+                      </a>
+                    </li>
+                    <li class="p-sidebar-cat__item">
+                      <a href="" class="p-sidebar-cat__link">
+                        カテゴリ
+                      </a>
+                    </li>
+                    <li class="p-sidebar-cat__item">
+                      <a href="" class="p-sidebar-cat__link">
+                        カテゴリ
+                      </a>
+                    </li>
+                    <li class="p-sidebar-cat__item">
+                      <a href="" class="p-sidebar-cat__link">
+                        カテゴリ
+                      </a>
+                    </li>
+                    <li class="p-sidebar-cat__item">
+                      <a href="" class="p-sidebar-cat__link">
+                        その他
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </aside>
+
+          </div>
+        </div>
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
