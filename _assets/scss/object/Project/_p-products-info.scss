@@ -1,0 +1,78 @@
+@use "foundation/global";
+
+// Project ギフト・贈り物 インフォメーション
+//--------------------------------------------------------------------------
+
+.p-products-info {
+  position: relative;
+  border: 4px solid global.$color-text-black;
+  padding: 35px 36px;
+  background-color: global.$color-text-white;
+
+  @include global.mq(md) {
+    padding: 75px 56px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid global.$color-main;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    pointer-events: none;
+  }
+}
+
+.p-products-info__body {
+  @include global.mq(md) {
+    width: calc(50% - 60px / 2);
+  }
+}
+
+.p-products-info__head {
+  position: relative;
+  padding-bottom: 23px;
+  @include global.fz(16, 24);
+  @include global.lh(1.75, 1.66);
+  font-weight: 700;
+
+  @include global.mq(md) {
+    padding-bottom: 24px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22460%22%20height%3D%223%22%20viewBox%3D%220%200%20460%203%22%3E%20%3Cdefs%3E%20%3CclipPath%20id%3D%22clip-path%22%3E%20%3Crect%20width%3D%22460%22%20height%3D%223%22%20fill%3D%22none%22%2F%3E%20%3C%2FclipPath%3E%20%3C%2Fdefs%3E%20%3Cg%20id%3D%22%E3%83%AA%E3%83%94%E3%83%BC%E3%83%88%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89_18%22%20data-name%3D%22%E3%83%AA%E3%83%94%E3%83%BC%E3%83%88%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%2018%22%20clip-path%3D%22url(%23clip-path)%22%3E%20%3Cg%20transform%3D%22translate(-110%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-99%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-2%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-88%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-3%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-77%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-4%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-66%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-5%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-55%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-6%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-44%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-7%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-33%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-8%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-22%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-9%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(-11%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-10%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(0%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-11%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(11%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-12%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(22%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-13%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(33%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-14%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(44%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-15%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(55%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-16%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(66%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-17%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(77%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-18%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(88%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-19%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(99%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-20%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(110%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-21%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(121%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-22%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(132%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-23%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(143%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-24%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(154%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-25%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(165%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-26%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(176%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-27%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(187%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-28%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(198%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-29%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(209%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-30%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(220%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-31%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(231%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-32%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(242%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-33%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(253%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-34%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(264%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-35%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(275%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-36%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(286%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-37%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(297%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-38%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(308%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-39%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(319%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-40%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(330%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-41%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3Cg%20transform%3D%22translate(341%20-2585)%22%3E%20%3Ccircle%20id%3D%22%E6%A5%95%E5%86%86%E5%BD%A2_16-42%22%20data-name%3D%22%E6%A5%95%E5%86%86%E5%BD%A2%2016%22%20cx%3D%221.5%22%20cy%3D%221.5%22%20r%3D%221.5%22%20transform%3D%22translate(110%202585)%22%20fill%3D%22%23382620%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat: repeat-x;
+  }
+}
+
+.p-products-info__lead {
+  margin-top: 21px;
+  @include global.fz(12, 16);
+  @include global.lh(2);
+
+  @include global.mq(md) {
+    margin-top: 35px;
+  }
+}
+
+.p-products-info__picture {
+  display: block;
+  margin-top: 36px;
+
+  @include global.mq(md) {
+    margin-top: 0;
+    width: calc(50% - 60px / 2);
+  }
+}

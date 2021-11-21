@@ -1,0 +1,64 @@
+@use "foundation/global";
+
+// Project ギフト・贈り物
+//--------------------------------------------------------------------------
+
+.p-products__row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.p-products__main {
+  width: 100%;
+  margin-bottom: 40px;
+
+  @include global.mq(md) {
+    width: calc(50% - 40px / 2);
+  }
+}
+
+.p-products__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include global.mq(md) {
+    width: calc(50% - 40px / 2);
+  }
+}
+
+.p-products__item {
+  width: calc(50% - 18px / 2);
+  margin-bottom: 40px;
+
+  @include global.mq(md) {
+    margin-bottom: 44px;
+    width: calc(50% - 40px / 2);
+  }
+}
+
+//--column-wide
+.p-products__list--column-wide {
+
+  @include global.mq(md) {
+    width: 100%;
+
+    &::before {
+      content: "";
+      order: 1;
+      width: calc(25% - 40px * 3 / 4);
+    }
+
+    &::after {
+      content: "";
+      width: calc(25% - 40px * 3 / 4);
+    }
+  }
+
+  .p-products__item {
+    @include global.mq(md) {
+      width: calc(25% - 40px * 3 / 4);
+    }
+  }
+}

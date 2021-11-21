@@ -1,0 +1,20 @@
+@use "foundation/global";
+
+// Layout ギフト・贈り物
+//--------------------------------------------------------------------------
+
+.l-lower-products {
+  margin-top: 60px;
+
+  @include global.mq(md) {
+    margin-top: 80px;
+  }
+}
+
+.l-lower-products__info {
+  margin-top: 20px;
+
+  @include global.mq(md) {
+    margin-top: 80px;
+  }
+}

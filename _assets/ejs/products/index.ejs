@@ -1,0 +1,216 @@
+<% let pageId='products' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main>
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-products.webp" type="image/webp" />
+            <img src="/img/common/img-mv-products.jpeg" class="p-lower-mv__img" decoding="async" width="1280" height="320"
+              alt="GIFTメインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">GIFT</p>
+            <p class="p-lower-mv__lead">ギフト・贈り物</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/products/"><span itemprop="name">ギフト・贈り物</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-lower-products">
+          <div class="l-inner">
+            <article class="p-products">
+              <div class="p-products__row">
+                <div class="p-products__main p-card-products p-card-products--large">
+                  <div class="p-card-products__img-wrapper">
+                    <img src="/img/common/img-item01.jpeg" alt="" decoding="async" class="p-card-products__img">
+                  </div>
+                  <div class="p-card-products__body">
+                    <h3 class="p-card-products__title">○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト</h3>
+                    <p class="p-card-products__price">3000 yen</p>
+                    <div class="p-card-products__link-wrapper">
+                      <a href="" class="p-card-products__button">ショップで確認する</a>
+                    </div>
+                  </div>
+                </div>
+                <ul class="p-products__list">
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img src="/img/common/img-item01.jpeg" alt="" decoding="async" class="p-card-products__img">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img src="/img/common/img-item02.jpeg" alt="" decoding="async" class="p-card-products__img">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img src="/img/common/img-item03.jpeg" alt="" decoding="async" class="p-card-products__img">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img src="/img/common/img-item04.jpeg" alt="" decoding="async" class="p-card-products__img">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-products__row">
+                <ul class="p-products__list p-products__list--column-wide">
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item05.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item06.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item07.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item08.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item08.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item08.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="p-products__item p-card-products">
+                    <div class="p-card-products__img-wrapper">
+                      <img data-src="/img/common/img-item08.jpeg" alt="" class="p-card-products__img lazyload">
+                    </div>
+                    <div class="p-card-products__body">
+                      <h3 class="p-card-products__title">○○○○の詰め合わせギフト</h3>
+                      <p class="p-card-products__price">3000 yen</p>
+                      <div class="p-card-products__link-wrapper">
+                        <a href="" class="p-card-products__button">ショップで確認する</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="p-products-info l-lower-products__info">
+              <div class="p-products-info__body">
+                <h3 class="p-products-info__head">
+                  ラッピングは無料でお付けいたします。お気軽にご相談ください。
+                </h3>
+                <p class="p-products-info__lead">
+                  テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。テキストがはいります。
+                </p>
+              </div>
+              <picture class="p-products-info__picture">
+                <source class="p-products-info__img" srcset="/img/webp/img-wrapping.webp" type="image/webp" />
+                <img data-src="/img/common/img-wrapping.jpeg" class="p-products-info__img lazyload" width="460" height="300"
+                  alt="ラッピングイメージ">
+              </picture>
+            </div>
+          </div>
+        </div>
+
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
