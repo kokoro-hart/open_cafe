@@ -1,0 +1,35 @@
+@use "foundation/global";
+
+// Project お問い合わせ
+//--------------------------------------------------------------------------
+
+.p-contact__title {
+  @include global.fz(20, 28);
+  @include global.lh(2, 1.42);
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.p-contact__body {
+  margin-top: 25px;
+
+  @include global.mq(md) {
+    margin-top: 27px;
+  }
+}
+
+.p-contact__intro {
+  @include global.fz(14, 16);
+  @include global.lh(1.71, 1.2);
+}
+
+.p-contact__text {
+  margin-top: 12px;
+  @include global.fz(14);
+  @include global.lh(1.71);
+
+  @include global.mq(md) {
+    margin-top: 32px;
+  }
+}

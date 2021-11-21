@@ -1,0 +1,136 @@
+<% let pageId='contact' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main>
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-contact.webp" type="image/webp" />
+            <img src="/img/common/img-mv-contact.jpeg" class="p-lower-mv__img" decoding="async" width="1280" height="320"
+              alt="お問い合わせメインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">CONTACT</p>
+            <p class="p-lower-mv__lead">お問い合わせ</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/contact/"><span itemprop="name">お問い合わせ</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="p-contact l-lower-contact">
+          <h2 class="p-contact__title">
+            お問い合わせフォーム
+          </h2>
+          <div class="p-contact__body">
+            <p class="p-contact__intro">お問い合わせ内容に応じて、項目をご選択のうえ、お気軽にお問い合わせください。</p>
+            <!--コンタクトフォーム-->
+            <div class="p-form">
+              <dl class="p-form__dl">
+                <!--お問い合わせ項目-->
+                <div class="p-form__row">
+                  <dt class="p-form__dt">
+                    <label for="your-radio" class="p-form__label p-form__label--required">お問い合わせ項目</label>
+                  </dt>
+                  <dd class="p-form__dd">
+                    <label>
+                      <input class="p-form__radio" name="q1" type="radio" id="your-radio" value="お店のご利用・ご予約について" required checked>
+                      <span class="p-form__radio-part">お店のご利用・ご予約について</span>
+                    </label>
+                    <label>
+                      <input class="p-form__radio" name="q1" type="radio" id="your-radio" value="ギフト(贈り物)について" required>
+                      <span class="p-form__radio-part">再ギフト(贈り物)について</span>
+                    </label>
+
+                    <label>
+                      <input class="p-form__radio" name="q1" type="radio" id="your-radio" value="アルバイト応募について" required>
+                      <span class="p-form__radio-part">アルバイト応募について</span>
+                    </label>
+                    
+                    <label>
+                      <input class="p-form__radio" name="q1" type="radio" id="your-radio" value="その他" required>
+                      <span class="p-form__radio-part">その他</span>
+                    </label>
+                  </dd>
+                </div>
+                <!--/お問い合わせ項目-->
+
+                <!--お名前-->
+                <div class="p-form__row">
+                  <dt class="p-form__dt">
+                    <label class="p-form__label p-form__label--required" for="your-name">お名前</label>
+                  </dt>
+                  <dd class="p-form__dd">
+                    <input class="p-form__input" id="your-name" type="text" placeholder="お名前を入力してください" autocomplete="name" required>
+                  </dd>
+                </div>
+                <!--/お名前-->
+
+                <!--メールアドレス-->
+                <div class="p-form__row">
+                  <dt class="p-form__dt">
+                    <label class="p-form__label p-form__label--required" for="your-email">メールアドレス</label>
+                  </dt>
+                  <dd class="p-form__dd">
+                    <input class="p-form__input" id="your-email" type="email" placeholder="example@mail.com" autocomplete="email"
+                      required>
+                  </dd>
+                </div>
+                <!--/メールアドレス-->
+      
+                <!--電話番号-->
+                <div class="p-form__row">
+                  <dt class="p-form__dt">
+                    <label class="p-form__label p-form__label--required" for="your-tel">電話番号</label>
+                  </dt>
+                  <dd class="p-form__dd">
+                    <input class="p-form__input" id="your-tel" type="text" placeholder="09012345678" autocomplete="tel"
+                      required>
+                  </dd>
+                </div>
+                <!--/電話番号-->
+
+                <!--お問い合わせ内容-->
+                <div class="p-form__row">
+                  <dt class="p-form__dt">
+                    <label class="p-form__label p-form__label--required" for="your-textarea">お問い合わせ内容</label>
+                  </dt>
+                  <dd class="p-form__dd">
+                    <textarea class="p-form__input p-form__textarea" id="your-textarea" placeholder="お問い合わせ内容を入力してください"
+                      required></textarea>
+                  </dd>
+                </div>
+                <!--/お問い合わせ内容-->
+              </dl>
+              <p class="p-contact__text">当社は、お客様の個人情報の流出・漏洩の防止、その他個人情報の安全管理のために必要かつ適切な措置を講じるものとし、法令などに正当な理由がある場合を除き、お客様の同意なく目的外での利用および第三者への提供は行いません。</p>
+
+              <div class="p-form__submit-wrapper">
+                <div class="c-button-primary">
+                  送信                  
+                  <input type="submit" value="送信">
+                </div>
+              </div>
+            </div>
+            <!--/コンタクトフォーム-->
+          </div>
+        </section>
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>

@@ -1,0 +1,190 @@
+@use "foundation/global";
+
+// Project フォーム
+//--------------------------------------------------------------------------
+
+.p-form {
+  width: 100%;
+  margin-top: 58px;
+
+  @include global.mq(md) {
+    margin-top: 78px;
+  }
+}
+
+.p-form__row {
+  @include global.mq(md) {
+    display: flex;
+  }
+
+  &:not(:first-child) {
+    margin-top: 42px;
+  }
+}
+.p-form__dt {
+  width: 100%;
+  @include global.mq(md) {
+    max-width: 198px;
+  }
+}
+
+.p-form__dd {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+
+  @include global.mq(md) {
+    width: calc(100% - 198px);
+    margin-top: 0;
+  }
+
+  label {
+    display: block;
+    &:first-child {
+      margin-top: 17px;
+
+      @include global.mq(md) {
+        margin-top: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.p-form__label {
+  display: inline-block;
+  @include global.fz(16);
+  @include global.lh(1.18);
+  font-weight: 700;
+}
+
+.p-form__label--required {
+  position: relative;
+  padding-right: 42px;
+
+  &::after {
+    content: "必須";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    max-width: 34px;
+    width: 100%;
+    height: 19px;
+    background-color: global.$color-accent;
+    color: global.$color-text-white;
+    @include global.fz(11);
+    @include global.lh(1);
+    font-weight: 700;
+  }
+}
+
+.p-form__input {
+    box-shadow: none;
+    appearance: none;
+    border: 1px solid global.$color-text-black;
+    border-radius: 6px;
+    width: 100%;
+    padding: 11px 16px;
+    background-color: global.$color-text-white;
+    @include global.fz(16);
+    @include global.lh(1.2);
+    font-family: inherit;
+
+    &::placeholder {
+      @include global.fz(16);
+      @include global.lh(1.18);
+      color: global.$color-placeholder;
+    }
+}
+
+.p-form__textarea {
+  min-height: 200px;
+  @include global.lh(1.4);
+
+  @include global.mq(md) {
+    min-height: 240px;
+  }
+}
+
+//送信ボタン
+.p-form__submit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+
+  .c-button-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="submit"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+//ラジオボタン
+[type="radio"] {
+  position: absolute;
+  left: -100vw;
+  opacity: 0;
+}
+
+[type="radio"] + span {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0 4px 34px;
+  @include global.fz(16);
+  @include global.lh(1);
+  cursor: pointer;
+
+  @include global.mq(md) {
+
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border: 1px solid global.$color-text-black;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-color: global.$color-text-white;
+  }
+}
+
+[type="radio"]:checked + span {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: global.$color-accent;
+  }
+}

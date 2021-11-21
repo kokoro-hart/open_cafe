@@ -1,0 +1,15 @@
+@use "foundation/global";
+
+// Layout お問い合わせ
+//--------------------------------------------------------------------------
+
+.l-lower-contact {
+  max-width: 768px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+
+  @include global.mq(md) {
+    margin-top: 80px;
+    padding: 0 40px;
+  }
+}
