@@ -1,0 +1,57 @@
+@use "foundation/global";
+
+// Project インフォメーション
+//--------------------------------------------------------------------------
+
+.p-info {
+  display: block;
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.p-info__dl {
+  &:not(:first-child) {
+    margin-top: 19px;
+
+    @include global.mq(md) {
+      margin-top: 0;
+    }
+  }
+
+  @include global.mq(md) {
+    width: calc(50% - 40px / 2);
+  }
+}
+
+.p-info__row {
+  display: flex;
+  border-bottom: 1px solid global.$color-text-black;
+  padding-bottom: 12px;
+  font-weight: 700;
+
+  @include global.mq(md) {
+    padding-bottom: 16px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 19px;
+  }
+}
+
+.p-info__dt {
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  @include global.fz(14);
+}
+
+.p-info__dd {
+  padding-right: 12px;
+  @include global.fz(14);
+  @include global.lh(1.7);
+}

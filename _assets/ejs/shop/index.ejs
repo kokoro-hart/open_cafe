@@ -1,0 +1,250 @@
+<% let pageId='shop' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main>
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-shop_sp.webp" media="(max-width: 767px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/img-mv-shop_pc.webp" media="(min-width: 768px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/common/img-mv-shop_sp.jpeg" media="(max-width: 767px)" />
+            <img src="/img/common/img-mv-shop_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async"
+              alt="店舗一覧メインビジュアル">
+          </picture>
+          <h1 class="p-lower-mv__heading">
+            <p class="p-lower-mv__head">SHOP</p>
+            <p class="p-lower-mv__lead">店舗一覧</p>
+          </h1>
+        </section>
+
+        <div class="c-breadcrumb u-mt5">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/shop/"><span itemprop="name">店舗一覧</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-lower-shop">
+          <div class="l-inner">
+            <section class="p-shop">            
+              <div class="p-shop__inner">
+                <h2 class="p-shop__title">
+                  OPEN CAFE　吉祥寺店
+                </h2>
+                <div class="p-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6479.455032255371!2d139.64568952786712!3d35.70832242075193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f27e0120fb6f%3A0x110d35cf03e05ac5!2z44CSMTY2LTAwMDIg5p2x5Lqs6YO95p2J5Lim5Yy66auY5YaG5a-65YyX!5e0!3m2!1sja!2sjp!4v1637463249775!5m2!1sja!2sjp"
+                    width="689" height="387" style="border:0;" allowfullscreen="" decoding="async">
+                  </iframe>
+                </div>
+                <address class="p-info">
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        住所
+                      </dt>
+                      <dd class="p-info__dd">
+                        〒000-0000<br>東京都杉並区高円寺0-0-0
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        TEL
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="tel:0123-456-789">0123-456-789</a>
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        Mail
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="mailto:example@mail.com">example@mail.com</a>
+                      </dd>
+                    </div>
+                  </dl>
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        営業時間
+                      </dt>
+                      <dd class="p-info__dd">
+                        7:00〜21:00<br>※ラストオーダー 20:30
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        定休日
+                      </dt>
+                      <dd class="p-info__dd">
+                        水曜日
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        座席
+                      </dt>
+                      <dd class="p-info__dd">
+                        テーブル20席 ／ カウンター席6席
+                      </dd>
+                    </div>
+                  </dl>
+                </address>
+              </div>
+            </section>
+
+            <section class="p-shop">
+              <div class="p-shop__inner">
+                <h2 class="p-shop__title">
+                  OPEN CAFE　阿佐ヶ谷店
+                </h2>
+                <div class="p-map">
+                  <iframe
+                    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6479.260129391984!2d139.63187452786707!3d35.710720070749495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ed89400bb025%3A0xe163fbc6ba8a0d1c!2z44CSMTY2LTAwMDEg5p2x5Lqs6YO95p2J5Lim5Yy66Zi_5L2Q6LC3!5e0!3m2!1sja!2sjp!4v1637463315306!5m2!1sja!2sjp"
+                    width="689" height="387" style="border:0;" allowfullscreen="" class="lazyload">
+                  </iframe>
+                </div>
+                <address class="p-info">
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        住所
+                      </dt>
+                      <dd class="p-info__dd">
+                        〒000-0000<br>東京都杉並区阿佐谷0-0-0
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        TEL
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="tel:0123-456-789">0123-456-789</a>
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        Mail
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="mailto:example@mail.com">example@mail.com</a>
+                      </dd>
+                    </div>
+                  </dl>
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        営業時間
+                      </dt>
+                      <dd class="p-info__dd">
+                        7:00〜21:00<br>※ラストオーダー 20:30
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        定休日
+                      </dt>
+                      <dd class="p-info__dd">
+                        水曜日
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        座席
+                      </dt>
+                      <dd class="p-info__dd">
+                        テーブル20席 ／ カウンター席6席
+                      </dd>
+                    </div>
+                  </dl>
+                </address>
+              </div>
+            </section>
+
+            <section class="p-shop">
+              <div class="p-shop__inner">
+                <h2 class="p-shop__title">
+                  OPEN CAFE　中野店
+                </h2>
+                <div class="p-map">
+                  <iframe
+                    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6479.715168216488!2d139.66471722786662!3d35.70512207075502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f295bb79031d%3A0x6e3d0d854aefd666!2z44CSMTY0LTAwMDEg5p2x5Lqs6YO95Lit6YeO5Yy65Lit6YeO!5e0!3m2!1sja!2sjp!4v1637463399459!5m2!1sja!2sjp"
+                    width="689" height="387" style="border:0;" allowfullscreen="" class="lazyload">
+                  </iframe>
+                </div>
+                <address class="p-info">
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        住所
+                      </dt>
+                      <dd class="p-info__dd">
+                        〒000-0000<br>東京都中野区中野0-0-0
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        TEL
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="tel:0123-456-789">0123-456-789</a>
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        Mail
+                      </dt>
+                      <dd class="p-info__dd">
+                        <a href="mailto:example@mail.com">example@mail.com</a>
+                      </dd>
+                    </div>
+                  </dl>
+                  <dl class="p-info__dl">
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        営業時間
+                      </dt>
+                      <dd class="p-info__dd">
+                        7:00〜21:00<br>※ラストオーダー 20:30
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        定休日
+                      </dt>
+                      <dd class="p-info__dd">
+                        水曜日
+                      </dd>
+                    </div>
+                    <div class="p-info__row">
+                      <dt class="p-info__dt">
+                        座席
+                      </dt>
+                      <dd class="p-info__dd">
+                        テーブル20席 ／ カウンター席6席
+                      </dd>
+                    </div>
+                  </dl>
+                </address>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+        <%- include('../common/_access', {pageId:pageId }) %>
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
