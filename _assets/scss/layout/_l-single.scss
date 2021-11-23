@@ -1,0 +1,16 @@
+@use "foundation/global";
+
+// Layout 記事詳細ページ
+//--------------------------------------------------------------------------
+
+.l-single {
+  max-width: 768px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 58px auto 0;
+
+  @include global.mq(md) {
+    margin-top: 80px;
+    padding: 0 40px;
+  }
+}

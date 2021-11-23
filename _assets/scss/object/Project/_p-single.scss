@@ -1,0 +1,139 @@
+@use "foundation/global";
+
+// Project 記事詳細ページ
+//--------------------------------------------------------------------------
+
+.p-single__thumbnail {
+  width: 100%;
+}
+
+.p-single__title {
+  margin-top: 24px;
+  @include global.fz(20, 28);
+  @include global.lh(1.4);
+  font-weight: 700;
+}
+
+.p-single__info {
+  display: flex;
+  margin-top: 25px;
+  @include global.fz(14);
+  @include global.lh(1.21);
+  font-weight: 700;
+}
+
+.p-single__date {
+  margin-right: 20px;
+}
+
+.p-single__cat {
+  position: relative;
+  padding-left: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 18px;
+    width: 1px;
+    background-color: global.$color-text-black;
+  }
+}
+
+.p-single__body {
+  margin-top: 35px;
+}
+
+.p-single__pager {
+  margin-top: 56px;
+}
+
+.p-single {
+  p {
+    margin-bottom: 35px;
+    @include global.fz(14, 16);
+    @include global.lh(2);
+  }
+
+  figure {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  figcaption {
+    margin-top: 6px;
+    margin-bottom: 12px;
+    @include global.fz(12);
+    @include global.lh(1.71);
+  }
+
+  h2 {
+    border-left: 4px solid global.$color-text-black;
+    margin-top: 77px;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    @include global.fz(18, 24);
+    @include global.lh(1.55);
+    font-weight: 700;
+
+    @include global.mq(md) {
+      margin-top: 96px;
+    }
+  }
+
+  h3 {
+    border-bottom: 1px solid global.$color-text-black;
+    margin-top: 54px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    @include global.fz(16, 20);
+    @include global.lh(1.5, 2);
+    font-weight: 700;
+  }
+
+  h4 {
+    margin-top: 55px;
+    margin-bottom: 15px;
+    @include global.fz(14, 16);
+    @include global.lh(1.71);
+    font-weight: 700;
+  }
+
+  ul {
+    margin-bottom: 35px;
+    li {
+      position: relative;
+      list-style: none;
+      padding-left: 34px;
+      @include global.fz(14, 16);
+      @include global.lh(1.71, 2);
+
+      &::before {
+        content: "・";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+      }
+    }
+  }
+
+  blockquote {
+    padding: 21px 24px;
+    margin: 34px 0;
+    background-color: global.$color-text-white; 
+
+    @include global.mq(md) {
+      padding: 35px 40px 40px;
+    }
+
+    cite {
+      display: block;
+      margin-top: 16px;
+      padding-right: 24px;
+      text-align: right;
+    }
+  }
+}

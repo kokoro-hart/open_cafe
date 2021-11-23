@@ -1,0 +1,13 @@
+@use "foundation/global";
+
+// Layout 関連記事
+//--------------------------------------------------------------------------
+
+.l-related {
+  width: 100%;
+  margin:  167px auto 0;
+
+  @include global.mq(md) {
+    margin-top: 192px;
+  }
+}
