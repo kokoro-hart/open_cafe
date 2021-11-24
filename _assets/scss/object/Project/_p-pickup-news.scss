@@ -1,0 +1,62 @@
+@use "foundation/global";
+
+// Project Pickup ニュース
+//--------------------------------------------------------------------------
+
+.p-pickup-news {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  max-width: 335px;
+  width: 100%;
+  min-height: 124px;
+  padding: 12px;
+  background-color: rgba(global.$color-text-white, 0.85);
+
+  @include global.mq(md) {
+    bottom: 80px;
+    right: -175px;
+    left: auto;
+    max-width: 388px;
+    padding: 16px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -41px;
+    z-index: 2;
+    width: 126px;
+    height: 78px;
+    background-image: url(../img/webp/img-balloon-pickup.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+
+    @include global.browser('ie') {
+      background-image: url(../img/common/img-balloon-pickup.png);
+    } 
+    @include global.browser('safari') {
+      background-image: url(../img/common/img-balloon-pickup.png);
+    } 
+
+    @include global.mq(md) {
+      height: 109px;
+      top: -77px;
+      width: 168px;
+    }
+  }
+
+  .p-card-sidebar__title {
+    @include global.fz(12, 14);
+  }
+}
+
+.p-pickup-news__date {
+  margin-bottom: 11px;
+  margin-top: 9px;
+}
