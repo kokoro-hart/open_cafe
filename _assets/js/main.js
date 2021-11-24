@@ -9,6 +9,12 @@ import '@modules/svgxuse';
 import './lib/b_browser_switcher.js';
 //line-clamp
 import './lib/clamp.js';
+//object-fit
+import '@modules/object-fit-images';
+//intersection observer
+import '@modules/intersection-observer';
+//picture
+import '@modules/picturefill';
 
 
 import './common'
