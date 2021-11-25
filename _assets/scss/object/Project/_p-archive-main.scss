@@ -25,6 +25,10 @@
   width: calc(50% - 19px / 2);
   margin-bottom: 20px;
 
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
   @include global.mq(md) {
     width: calc(50% - 40px / 2);
     margin-bottom: 32px;
@@ -34,9 +38,5 @@
 .p-archive-main__pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-
-  @include global.mq(md) {
-    margin-top: 10px;
-  }
+  margin-top: 40px;
 }

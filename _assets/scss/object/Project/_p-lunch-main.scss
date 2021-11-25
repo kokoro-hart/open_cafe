@@ -74,9 +74,17 @@
   width: calc(50% - 20px / 2);
   margin-bottom: 18px;
 
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
   @include global.mq(md) {
     width: calc(50% - 40px / 2);
     margin-bottom: 40px;
+
+    &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
   }
 
   @include global.mq(1280px, min) {
@@ -89,7 +97,9 @@
 }
 
 .p-lunch-main__bottom {
+  margin-top: 18px;
+
   @include global.mq(md) {
-    margin-top: 41px;
+    margin-top: 81px;
   }
 }

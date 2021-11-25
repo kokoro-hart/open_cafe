@@ -87,9 +87,17 @@
   width: calc(50% - 19px / 2);
   margin-bottom: 19px;
 
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
   @include global.mq(md) {
     width: calc(25% - 24px * 3 / 4);
     margin-bottom: 24px;
+
+    &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
   }
 }
 
@@ -110,10 +118,10 @@
 
 .p-gallery__link-wrapper {
   width: 100%;
-  margin-top: 21px;
+  margin-top: 40px;
   text-align: center;
 
   @include global.mq(md) {
-    margin-top: 36px;
+    margin-top: 60px;
   }
 }

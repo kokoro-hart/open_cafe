@@ -7,14 +7,35 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @include global.mq(md) {
+    &::before {
+      content: "";
+      width: calc(25% - 3.63% * 3 / 4);
+      order: 1;
+    }
+
+    &::after {
+      content: "";
+      width: calc(25% - 3.63% * 3 / 4);
+    }
+  }
 }
 
 .p-menu-list__item {
   width: calc(50% - 18px / 2);
   margin-bottom: 22px;
 
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
   @include global.mq(md) {
     width: calc(25% - 3.63% * 3 / 4);
     margin-bottom: 32px;
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }

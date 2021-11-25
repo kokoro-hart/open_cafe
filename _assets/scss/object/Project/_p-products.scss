@@ -41,7 +41,6 @@
 
 //--column-wide
 .p-products__list--column-wide {
-
   @include global.mq(md) {
     width: 100%;
     &::before {
@@ -57,8 +56,16 @@
   }
 
   .p-products__item {
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+    
     @include global.mq(md) {
       width: calc(25% - 40px * 3 / 4);
+
+      &:nth-last-child(-n + 4) {
+        margin-bottom: 0;
+      }
     }
   }
 }
