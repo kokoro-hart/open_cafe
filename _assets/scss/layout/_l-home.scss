@@ -10,36 +10,8 @@
 .l-home__concept {
   width: 100%;
   padding-top: 120px;
-  margin: 0 auto;
+  margin: auto;
   max-width: 1280px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -17px;
-    width: 145px;
-    height: 130px;
-    background-image: url(../img/webp/bg-coffee.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: 1;
-
-    @include global.browser("ie") {
-      background-image: url(../img/common/bg-coffee.png);
-    }
-    @include global.browser("safari") {
-      background-image: url(../img/common/bg-coffee.png);
-    }
-
-    @include global.mq(md) {
-      top: -42px;
-      right: -40px;
-      width: 266px;
-      height: 243px;
-    }
-  }
 }
 
 //スペシャルランチ

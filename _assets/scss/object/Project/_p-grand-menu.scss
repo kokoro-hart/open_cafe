@@ -17,11 +17,6 @@
   }
 }
 
-.p-grand-menu__title-wrapper {
-  width: 100%;
-  text-align: center;
-}
-
 .p-grand-menu__contents {
   position: relative;
   z-index: 1;
@@ -38,7 +33,7 @@
     background-image: url(../img/webp/bg-eaves02.webp);
     background-repeat: no-repeat;
     background-position: left top;
-    background-size: 100% auto;
+    background-size: contain;
 
     @include global.browser("ie") {
       background-image: url(../img/common/bg-eaves02.png);

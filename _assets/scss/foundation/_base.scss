@@ -87,17 +87,20 @@ dd {
   margin-left: 0;
 }
 
+[type="radio"]:focus + span,
+textarea:focus,
+input:focus,
+a:focus {
+  outline: 1px solid global.$color-accent;
+}
+
+:focus:not(:focus-visible) {
+  outline: 0; //キーボード操作"以外"でフォーカスされた際はoutlineを消す
+}
 
 small {
   font-size: 100%;
 }
-
-input,
-button,
-select {
-  outline: none;
-}
-
 
 // 半角英数表示崩れ
 h1,
@@ -127,6 +130,10 @@ img {
   max-width: 100%;
   width: 100%;
   height: auto;
+}
+
+address {
+  font-style: normal;
 }
 
 .wrapper {

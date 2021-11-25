@@ -16,7 +16,8 @@
   text-align: center;
   transition: opacity 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.7;
   }
 }

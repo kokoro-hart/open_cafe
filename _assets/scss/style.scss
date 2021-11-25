@@ -11,13 +11,24 @@
 @use "layout/l-header";
 @use "layout/l-home";
 @use "layout/l-inner";
+@use "layout/l-lower-concept";
+@use "layout/l-lower-menu";
+@use "layout/l-lower-shop";
+@use "layout/l-lower-products";
+@use "layout/l-contact";
+@use "layout/l-archive";
+@use "layout/l-single";
+@use "layout/l-related";
 @use "layout/l-access";
+
 
 /* Component (prefix: c- )
    ----------------------------------------------------------------- */
 @use "object/component/c-button-drawer";
 @use "object/component/c-button-primary";
 @use "object/component/c-section-title";
+@use "object/component/c-breadcrumb";
+@use "object/component/c-pagination";
 
 /* Project (prefix: p- )
    ----------------------------------------------------------------- */
@@ -29,33 +40,58 @@
 @use "object/Project/p-mv-slider";
 @use "object/Project/p-mv-nav";
 
+@use "object/Project/p-pickup-news";
+
 @use "object/Project/p-sns";
 @use "object/Project/p-global-nav";
 
+@use "object/Project/p-lower-mv";
+
+@use "object/Project/p-home-concept";
 @use "object/Project/p-concept";
 
 @use "object/Project/p-lunch";
-@use "object/Project/p-lunch-detail";
+@use "object/Project/p-lunch-main";
 @use "object/Project/p-lunch-info";
 
 @use "object/Project/p-grand-menu";
 @use "object/Project/p-drinks";
+@use "object/Project/p-menu-tab";
+@use "object/Project/p-menu-list";
 
 @use "object/Project/p-card-lunch";
 @use "object/Project/p-card-menu";
 @use "object/Project/p-card-news";
+@use "object/Project/p-card-sidebar";
+@use "object/Project/p-card-products";
 
 @use "object/Project/p-gallery";
 
 @use "object/Project/p-news";
+@use "object/Project/p-archive-main";
+@use "object/Project/p-sidebar-block";
+@use "object/Project/p-sidebar-cat";
+@use "object/Project/p-single";
+@use "object/Project/p-single-pager";
+@use "object/Project/p-related";
 
 @use "object/Project/p-access";
+@use "object/Project/p-map";
+@use "object/Project/p-info";
+@use "object/Project/p-shop";
+
+@use "object/Project/p-products";
+@use "object/Project/p-products-info";
+
+@use "object/Project/p-contact";
+@use "object/Project/p-form";
 
 @use "object/Project/p-footer";
 
 /* Utitlity (prefix: u- )
    ----------------------------------------------------------------- */
-@use "object/utility/hidden";
+@use "object/utility/u-hidden";
+@use "object/utility/u-margin";
 
 /* External
    ----------------------------------------------------------------- */

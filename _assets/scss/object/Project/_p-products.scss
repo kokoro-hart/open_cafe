@@ -22,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 
   @include global.mq(md) {
     width: calc(50% - 40px / 2);
@@ -43,7 +44,6 @@
 
   @include global.mq(md) {
     width: 100%;
-
     &::before {
       content: "";
       order: 1;

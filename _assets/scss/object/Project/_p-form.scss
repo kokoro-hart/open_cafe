@@ -21,6 +21,7 @@
     margin-top: 42px;
   }
 }
+
 .p-form__dt {
   width: 100%;
   @include global.mq(md) {
@@ -187,4 +188,16 @@
     height: 12px;
     background: global.$color-accent;
   }
+}
+
+// コンタクトフォーム7用のスタイル
+.wpcf7-list-item {
+  margin-left: 0;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }

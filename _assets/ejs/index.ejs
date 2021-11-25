@@ -19,8 +19,8 @@
           <% for(let page in jsonData.pages){ %>
           <li class="p-mv-nav__item">
             <a href="<%= jsonData.pages[page].slug %>" class="p-mv-nav__link">
-              <span class="p-mv-nav__text-en"><%= jsonData.pages[page].name %></span>
-              <span class="p-mv-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
+              <span class="p-mv-nav__text-en"><%= jsonData.pages[page].navEn %></span>
+              <span class="p-mv-nav__text-ja"><%= jsonData.pages[page].navJa %></span>
             </a>
           </li>
           <% }; %>
@@ -110,12 +110,10 @@
           alt="コンセプトイメージ">
       </picture>
       <div class="p-home-concept__contents">
-        <div class="p-home-concept__title-wrapper">
-          <h2 class="c-section-title">
-            <span class="c-section-title__en">CONCEPT</span>
-            <span class="c-section-title__ja">当店のこだわり</span>
-          </h2>
-        </div>
+        <h2 class="c-section-title c-section-title--align-left">
+          <span class="c-section-title__en">CONCEPT</span>
+          <span class="c-section-title__ja">当店のこだわり</span>
+        </h2>
         <div class="p-home-concept__body">
           <h3 class="p-home-concept__title">
             最高のコーヒーと、<br>時の流れを味わうことができる<br>手作りカフェ
@@ -141,12 +139,10 @@
 
   <section class="p-lunch l-home__lunch">
     <div class="p-lunch__inner">
-      <div class="p-lunch__title-wrapper">
-        <h2 class="c-section-title">
-          <span class="c-section-title__en">SPECIAL LUNCH SET</span>
-          <span class="c-section-title__ja">今月のスペシャルランチセット</span>
-        </h2>
-      </div>
+      <h2 class="c-section-title">
+        <span class="c-section-title__en">SPECIAL LUNCH SET</span>
+        <span class="c-section-title__ja">今月のスペシャルランチセット</span>
+      </h2>
       <div class="p-lunch__contents p-lunch-main">
         <picture class="p-lunch-main__heading">
           <source class="p-lunch-main__ribbon" srcset="/img/webp/img-ribbon_sp.webp" media="(max-width: 767px)" type="image/webp" />
@@ -213,12 +209,10 @@
   </section>
 
   <section class="p-grand-menu l-home__grand-menu">
-    <div class="p-grand-menu__title-wrapper">
-      <h2 class="c-section-title">
-        <span class="c-section-title__en">GRAND MENU</span>
-        <span class="c-section-title__ja">グランドメニュー</span>
-      </h2>
-    </div>
+    <h2 class="c-section-title">
+      <span class="c-section-title__en">GRAND MENU</span>
+      <span class="c-section-title__ja">グランドメニュー</span>
+    </h2>
     <div class="p-grand-menu__contents l-inner">
       <section class="p-grand-menu__row">
         <h3 class="p-grand-menu__heading">パスタ</h3>
@@ -392,12 +386,10 @@
   </section>
 
   <section class="p-gallery l-home__gallery">
-    <div class="p-gallery__title-wrapper">
-      <h2 class="c-section-title">
-        <span class="c-section-title__en">GALLERY</span>
-        <span class="c-section-title__ja">ギャラリー</span>
-      </h2>
-    </div>
+    <h2 class="c-section-title">
+      <span class="c-section-title__en">GALLERY</span>
+      <span class="c-section-title__ja">ギャラリー</span>
+    </h2>
     <div class="p-gallery__contents l-inner">
       <article class="p-gallery__photos">
         <div class="p-gallery__photo">
@@ -438,12 +430,10 @@
   </section>
 
   <section class="p-news l-home__news">
-    <div class="p-news__title-wrapper">
-      <h2 class="c-section-title">
-        <span class="c-section-title__en">NEWS</span>
-        <span class="c-section-title__ja">お知らせ</span>
-      </h2>
-    </div>
+    <h2 class="c-section-title">
+      <span class="c-section-title__en">NEWS</span>
+      <span class="c-section-title__ja">お知らせ</span>
+    </h2>
     <div class="p-news__contents l-inner">
       <article class="p-news__main">
         <a href="" class="p-card-news p-card-news--large">

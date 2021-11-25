@@ -1,54 +1,61 @@
 {
   "siteInfo": {
-    "name": "Open Cafe",
+    "name": "Open Cafe - dish & coffee -",
     "siteUrl": "サイトのドメイン"
   },
   "pages": {
     "home": {
       "name": "TOP",
-      "nameJa":"トップ",
+      "navEn": "TOP",
+      "navJa":"トップ",
       "description": "トップページの説明",
       "type": "website",
       "slug": "/"
     },
     "concept": {
-      "name": "CONCEPT",
-      "nameJa":"コンセプト",
+      "name": "当店のこだわり",
+      "navEn": "CONCEPT",
+      "navJa":"コンセプト",
       "description": "コンセプトの説明",
       "type": "article",
       "slug": "/concept/"
     },
     "menu": {
-      "name": "MENU",
-      "nameJa":"メニュー",
+      "name": "メニュー",
+      "navEn": "MENU",
+      "navJa":"メニュー",
       "description": "メニューの説明",
       "type": "article",
       "slug": "/menu/"
     },
     "news": {
-      "name": "NEWS",
-      "nameJa":"ニュース",
+      "name": "お知らせ",
+      "navEn": "NEWS",
+      "navJa":"ニュース",
       "description": "ニュースの説明",
       "type": "article",
       "slug": "/news/"
     },
     "shop": {
-      "name": "SHOP",
-      "nameJa":"店舗情報",
+      "name": "店舗一覧",
+      "navEn": "SHOP",
+      "navJa":"店舗情報",
       "description": "店舗情報の説明",
       "type": "article",
       "slug": "/shop/"
     },
-    "gift": {
-      "name": "GIFT",
-      "nameJa":"ギフト・贈り物",
+    "products": {
+      "name": "ギフト・贈り物",
+      "navEn": "GIFT",
+      "navJa":"ギフト・贈り物",
       "description": "ギフト・贈り物の説明",
       "type": "article",
-      "slug": "/gift/"
+      "slug": "/products/"
     },
     "contact": {
-      "name": "CONTACT",
-      "nameJa":"お問い合わせ",
+      "name": "お問い合わせ",
+      "navEn": "CONTACT",
+      "navJa":"お問い合わせ",
       "description": "お問い合わせの説明",
       "type": "article",
       "slug": "/contact/"

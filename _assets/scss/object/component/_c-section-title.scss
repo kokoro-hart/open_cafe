@@ -4,7 +4,8 @@
 //--------------------------------------------------------------------------
 
 .c-section-title {
-  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 .c-section-title__en {
@@ -29,4 +30,8 @@
   @include global.mq(md) {
     margin-top: 6px;
   }
+}
+
+.c-section-title--align-left {
+  text-align: left;
 }

@@ -32,13 +32,16 @@
   <div id="wrapper">
     <header class="l-header p-header">
       <div class="p-header__inner">
+        <% if (pageId==='home' ){ %>
         <p class="p-header__logo u-hidden-xl-up">
           <a href="/" class="p-header__logo-link">
             <svg class="c-svg p-header__logo-icon" width="120" height="64">
+              Open Cafe - dish & coffee -
               <use xlink:href="/img/svg/sprite.min.svg#logo02" />
             </svg>
           </a>
         </p>
+        <% } %>
       </div>
 
       <button id="js-drawer-button" class="p-header__button c-button-drawer" aria-controls="js-glabal-nav" aria-expanded="false" area-label="メニューを開閉する">
@@ -60,8 +63,8 @@
             <% for(let page in jsonData.pages){ %>
             <li class="p-global-nav__item">
               <a href="<%= jsonData.pages[page].slug %>" class="p-global-nav__link">
-                <span class="p-global-nav__text-en"><%= jsonData.pages[page].name %></span>
-                <span class="p-global-nav__text-ja"><%= jsonData.pages[page].nameJa %></span>
+                <span class="p-global-nav__text-en"><%= jsonData.pages[page].navEn %></span>
+                <span class="p-global-nav__text-ja"><%= jsonData.pages[page].navJa %></span>
               </a>
             </li>
             <% }; %>

@@ -3,7 +3,7 @@
 // Project スペシャルランチの詳細
 //--------------------------------------------------------------------------
 
-.p-lunch-detail {
+.p-lunch-main {
   position: relative;
   padding: 38px 20px 20px;
 
@@ -12,7 +12,7 @@
   }
 }
 
-.p-lunch-detail__heading {
+.p-lunch-main__heading {
   position: absolute;
   top: 0;
   left: 50%;
@@ -25,7 +25,7 @@
   }
 }
 
-.p-lunch-detail__balloon {
+.p-lunch-main__balloon {
   position: absolute;
   top: -240px;
   right: -18px;
@@ -47,7 +47,7 @@
   }
 }
 
-.p-lunch-detail__list {
+.p-lunch-main__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -70,7 +70,7 @@
   }
 }
 
-.p-lunch-detail__item {
+.p-lunch-main__item {
   width: calc(50% - 20px / 2);
   margin-bottom: 18px;
 
@@ -81,7 +81,6 @@
 
   @include global.mq(1280px, min) {
     width: calc(25% - 20px * 3 / 4);
-    bottom: 20px;
 
     &:nth-child(2n) {
       margin-top: 39px;
@@ -89,7 +88,7 @@
   }
 }
 
-.p-lunch-detail__bottom {
+.p-lunch-main__bottom {
   @include global.mq(md) {
     margin-top: 41px;
   }

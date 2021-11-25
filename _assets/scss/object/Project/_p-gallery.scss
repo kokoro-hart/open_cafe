@@ -32,11 +32,6 @@
   }
 }
 
-.p-gallery__title-wrapper {
-  width: 100%;
-  text-align: center;
-}
-
 .p-gallery__contents {
   position: relative;
   margin-top: 42px;
@@ -88,6 +83,7 @@
 }
 
 .p-gallery__photo {
+  display: block;
   width: calc(50% - 19px / 2);
   margin-bottom: 19px;
 

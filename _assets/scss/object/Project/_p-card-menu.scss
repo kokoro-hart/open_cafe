@@ -44,25 +44,21 @@
 }
 
 //--archive
-.p-card-menu {
-  $this: &;
+.p-card-menu--archive {
+  .p-card-menu__img {
+    border: none;
+  }
 
-  &--archive {
-    #{$this}__img {
-      border: none;
-    }
+  .p-card-menu__title {
+    @include global.fz(14);
+  }
 
-    #{$this}__title {
-      @include global.fz(14);
-    }
+  .p-card-menu__price {
+    @include global.fz(24);
+    text-align: center;
 
-    #{$this}__price {
-      @include global.fz(24);
-      text-align: center;
-
-      @include global.mq(md) {
-        font-weight: 400;
-      }
+    @include global.mq(md) {
+      font-weight: 400;
     }
   }
 }

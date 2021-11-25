@@ -58,7 +58,7 @@
   left: 20px;
   z-index: 2;
   color: global.$color-text-white;
-  @include global.fz(16, 20);
+  @include global.fz(16);
   @include global.lh(2, 2.3);
   letter-spacing: 2.24px;
   font-family: global.$font-family-en02;
@@ -69,5 +69,9 @@
     top: auto;
     left: 56px;
     bottom: 123px;
+  }
+
+  @include global.mq(lg) {
+    font-size: 20px;
   }
 }

@@ -2,18 +2,7 @@
 
 // Project サイドバー カテゴリ
 //--------------------------------------------------------------------------
-
-.p-sidebar-cat {
-
-}
-
-.p-sidebar-cat__list {
-  
-}
-
 .p-sidebar-cat__item {
-  
-
   &:not(:first-child) {
     margin-top: 22px;
   }
@@ -28,7 +17,8 @@
   font-weight: 700;
   transition: opacity 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.8;
     &::before {
       transform: translate(2px, -50%);

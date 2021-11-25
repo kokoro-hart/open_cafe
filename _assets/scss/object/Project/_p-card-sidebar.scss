@@ -9,7 +9,8 @@
   width: 100%;
   transition: opacity 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.8;
   }
 }
@@ -43,6 +44,53 @@
   }
 }
 
+.p-card-sidebar__cat {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  padding: 3px 12px 3px 10px;
+  background-color: global.$color-main;
+  color: global.$color-text-white;
+  @include global.fz(12);
+  @include global.lh(1.2);
+  font-weight: 700;
+  z-index: 1;
+
+  @include global.mq(md) {
+    padding: 5px 12px 5px 14px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-color: transparent global.$color-text-gray transparent transparent;
+    border-style: solid;
+    border-width: 0 8px 4px 0;
+    height: 0;
+    width: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    z-index: 1;
+    border-color: global.$color-main transparent global.$color-main global.$color-main;
+    border-style: solid;
+    border-width: 9px 8px 11px 0px;
+    width: 0px;
+    height: 0px;
+
+    @include global.mq(md) {
+      border-width: 12px 9px 12px 0px;
+    }
+  }
+}
+
 .p-card-sidebar__title {
   @include global.fz(14);
   @include global.lh(1.71);
@@ -51,6 +99,7 @@
 }
 
 .p-card-sidebar__date {
+  display: inline-block;
   margin-top: 12px;
   @include global.fz(12);
   @include global.lh(1);

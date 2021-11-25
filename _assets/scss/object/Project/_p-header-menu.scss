@@ -33,9 +33,9 @@
   margin-top: 60px;
 }
 
-//ドロワーアクティブ時
+//メニューアクティブ時
 .p-header-menu.is-active {
+  right: 0;
   opacity: 1;
   visibility: visible;
-  right: 0;
 }

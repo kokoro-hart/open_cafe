@@ -1,0 +1,11 @@
+@use "foundation/global";
+
+// Utility margin
+//--------------------------------------------------------------------------
+
+.u-mt5 {
+  margin-top: 5px;
+  @include global.mq(md) {
+    margin-top: 15px;
+  }
+}
