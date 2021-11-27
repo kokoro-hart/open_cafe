@@ -215,10 +215,10 @@
               'orderby' => 'date',
               'order' => 'DESC'
             );
-            $my_posts = get_posts( $args );
-            if ( $my_posts ) :
+            $lunch_posts = get_posts( $args );
+            if ( $lunch_posts ) :
 
-            foreach ( $my_posts as $post ) :
+            foreach ( $lunch_posts as $post ) :
             setup_postdata( $post );
           ?>
           <li class="p-lunch-main__item p-card-lunch">
@@ -288,10 +288,10 @@
               'orderby' => 'date',
               'order' => 'DESC'
             );
-            $my_posts = get_posts( $args );
-            if ( $my_posts ) :
+            $menu_posts = get_posts( $args );
+            if ( $menu_posts ) :
 
-            foreach ( $my_posts as $post ) :
+            foreach ( $menu_posts as $post ) :
             setup_postdata( $post );
           ?>
           <li class="p-grand-menu__item p-card-menu">
@@ -351,10 +351,10 @@
                       'orderby' => 'date',
                       'order' => 'DESC'
                     );
-                    $my_posts = get_posts( $args );
-                    if ( $my_posts ) :
+                    $drink_posts = get_posts( $args );
+                    if ( $drink_posts ) :
 
-                    foreach ( $my_posts as $post ) :
+                    foreach ( $drink_posts as $post ) :
                     setup_postdata( $post );
                   ?>
                   <li class="p-drinks__sub-item">
