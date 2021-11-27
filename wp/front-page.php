@@ -124,6 +124,7 @@
         'posts_per_page' => 1,
         'orderby' => 'date',
         'order' => 'DESC',
+        'tag' => 'pickup',
       );
       $new_posts = get_posts($args);
       foreach($new_posts as $post) : setup_postdata($post);
@@ -134,7 +135,7 @@
         <div class="p-card-sidebar__img-wrapper">
           <?php
             if(has_post_thumbnail()) {
-              the_post_thumbnail('small', array(
+              the_post_thumbnail('full', array(
                 'class' => 'p-card-sidebar__img'
               ));
             } else {
@@ -206,42 +207,44 @@
           <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-balloon.png" alt="パスタ、サラダ、ドリンクのお得なセット" class="p-lunch-main__ballon-img lazyload">
         </p>
         <ul class="p-lunch-main__list">
+          <?php
+            $args = array(
+              'posts_per_page' => 4, 
+              'post_type' => 'menu', 
+              'genre' => 'lunch', 
+              'orderby' => 'date',
+              'order' => 'DESC'
+            );
+            $my_posts = get_posts( $args );
+            if ( $my_posts ) :
+
+            foreach ( $my_posts as $post ) :
+            setup_postdata( $post );
+          ?>
           <li class="p-lunch-main__item p-card-lunch">
             <div class="p-card-lunch__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta01.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">
+              <?php
+                if(has_post_thumbnail()) {
+                  the_post_thumbnail('full', array(
+                    'class' => 'p-card-lunch__img lazyload'
+                  ));
+                } else {
+                  echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-pasta01.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">';
+                }
+              ?>
             </div>
             <div class="p-card-lunch__body">
-              <p class="p-card-lunch__label">A</p>
-              <h3 class="p-card-lunch__title">テキストテキストの○○風パスタテキストテキストの○○風パスタ</h3>
+              <?php if ( get_field('set')) :  ?>
+              <p class="p-card-lunch__label"><?php the_field( 'set' );?></p>
+              <?php endif; ?>
+              <h3 class="p-card-lunch__title"><?php the_title(); ?></h3>
             </div>
           </li>
-          <li class="p-lunch-main__item p-card-lunch">
-            <div class="p-card-lunch__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta02.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">
-            </div>
-            <div class="p-card-lunch__body">
-              <p class="p-card-lunch__label">B</p>
-              <h3 class="p-card-lunch__title">テキストテキストの○○風パスタテキストテキストの○○風パスタ</h3>
-            </div>
-          </li>
-          <li class="p-lunch-main__item p-card-lunch">
-            <div class="p-card-lunch__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta03.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">
-            </div>
-            <div class="p-card-lunch__body">
-              <p class="p-card-lunch__label">C</p>
-              <h3 class="p-card-lunch__title">テキストテキストの○○風パスタテキストテキストの○○風パスタ</h3>
-            </div>
-          </li>
-          <li class="p-lunch-main__item p-card-lunch">
-            <div class="p-card-lunch__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta04.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">
-            </div>
-            <div class="p-card-lunch__body">
-              <p class="p-card-lunch__label">D</p>
-              <h3 class="p-card-lunch__title">テキストテキストの○○風パスタテキストテキストの○○風パスタ</h3>
-            </div>
-          </li>
+          <?php
+            endforeach;
+            endif;
+            wp_reset_postdata();
+          ?>
         </ul>
         <div class="p-lunch-main__bottom p-lunch-info">
           <picture class="p-lunch-info__picture">
@@ -266,93 +269,66 @@
       <span class="c-section-title__ja">グランドメニュー</span>
     </h2>
     <div class="p-grand-menu__contents l-inner">
+
+      <?php
+        $terms = get_terms('genre');
+        foreach ( $terms as $term ) :
+        if (in_array($term->slug, array('drink', 'soft', 'coffee','tea', 'lunch' ))) {// ターム:ドリンク,限定ランチと子タームは除外
+          continue;
+        }
+      ?>
       <section class="p-grand-menu__row">
-        <h3 class="p-grand-menu__heading">パスタ</h3>
+        <h3 class="p-grand-menu__heading"><?php echo esc_html($term->name);?></h3>
         <ul class="p-grand-menu__list">
+          <?php
+            $args = array(
+              'posts_per_page' => 6, 
+              'post_type' => 'menu', 
+              'genre' => $term->slug, 
+              'orderby' => 'date',
+              'order' => 'DESC'
+            );
+            $my_posts = get_posts( $args );
+            if ( $my_posts ) :
+
+            foreach ( $my_posts as $post ) :
+            setup_postdata( $post );
+          ?>
           <li class="p-grand-menu__item p-card-menu">
             <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta01.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
+              <?php
+                if(has_post_thumbnail()) {
+                  the_post_thumbnail('full', array(
+                    'class' => 'p-card-menu__img'
+                  ));
+                } else {
+                  echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-pasta01.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload';
+                }
+              ?>
             </div>
-            <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタテキストテキストテキストの○○○○風パスタ</p>
-            <p class="p-card-menu__price">780 yen</p>
+            <p class="p-card-menu__title"><?php the_title(); ?></p>
+            <?php if ( get_field('price')) :  ?>
+            <p class="p-card-menu__price"><?php the_field( 'price' );?> yen</p>
+            <?php endif; ?>        
           </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta02.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-pasta03.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">テキストテキストテキストの○○○○風パスタ</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
+          <?php
+            endforeach;
+            endif;
+            wp_reset_postdata();
+          ?>
         </ul>
       </section>
+      <?php 
+        endforeach; 
+      ?>
+
+      <?php
+        $terms = get_terms('genre');
+        foreach ( $terms as $term ) :
+        if (in_array($term->slug, array('drink'))) : //ターム:ドリンク
+      ?>
       <section class="p-grand-menu__row">
-        <h3 class="p-grand-menu__heading">サラダ</h3>
-        <ul class="p-grand-menu__list">
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-salad01.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○風サラダ</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-salad02.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○風サラダ</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-        </ul>
-      </section>
-      <section class="p-grand-menu__row">
-        <h3 class="p-grand-menu__heading">パン & スイーツ</h3>
-        <ul class="p-grand-menu__list">
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-sweets01.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○サンド</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-sweets02.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○サンド</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-sweets03.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○サンド</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-sweets04.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○サンド</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-          <li class="p-grand-menu__item p-card-menu">
-            <div class="p-card-menu__img-wrapper">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-sweets04.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload">
-            </div>
-            <p class="p-card-menu__title">○○○○サンド</p>
-            <p class="p-card-menu__price">780 yen</p>
-          </li>
-        </ul>
-      </section>
-      <section class="p-grand-menu__row">
-        <h3 class="p-grand-menu__heading">ドリンク</h3>
+        <h3 class="p-grand-menu__heading"><?php echo $term->name ?></h3>
         <div class="p-grand-menu__drinks p-drinks">
           <picture class="p-drinks__img-wrapper u-hidden-xl-down">
             <source class="p-home-concept__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/img-drink01.webp" type="image/webp" />
@@ -360,77 +336,49 @@
           </picture>
           <div class="p-drinks__body">
             <ul class="p-drinks__list">
+              <?php 
+                $children = get_terms(array('taxonomy' => 'genre', 'parent' => $term->term_id)); // 子タームを取得
+                foreach($children as $child) : 
+              ?>              
               <li class="p-drinks__item">
-                <p class="p-drinks__cat">コーヒー</p>
+                <p class="p-drinks__cat"><?php echo $child->name ?></p>
                 <ul class="p-drinks__sub-list">
+                  <?php
+                    $args = array(
+                      'posts_per_page' => -1, 
+                      'post_type' => 'menu', 
+                      'genre' => $child->slug, 
+                      'orderby' => 'date',
+                      'order' => 'DESC'
+                    );
+                    $my_posts = get_posts( $args );
+                    if ( $my_posts ) :
+
+                    foreach ( $my_posts as $post ) :
+                    setup_postdata( $post );
+                  ?>
                   <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">ブレンド</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">カフェラテ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">豆乳ラテ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">カフェモカ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">キャラメルラテキャラメルラテキャラメルラテキャラメルラテ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
+                    <p class="p-drinks__name"><?php the_title(); ?></p>
+                    <?php if ( get_field('price')) :  ?>
+                    <p class="p-drinks__price"><?php the_field( 'price' );?> yen</p>
+                    <?php endif; ?>
+                  </li>                 
+                  <?php
+                    endforeach;
+                    endif;
+                    wp_reset_postdata();
+                  ?>  
                 </ul>
-              </li>
-              <li class="p-drinks__item">
-                <p class="p-drinks__cat">紅茶</p>
-                <ul class="p-drinks__sub-list">
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">ストレート</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">ミルク</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">アップル</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                </ul>
-              </li>
-              <li class="p-drinks__item">
-                <p class="p-drinks__cat">ソフトドリンク</p>
-                <ul class="p-drinks__sub-list">
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">バナナ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">オレンジ</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">アップル</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">マンゴー</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                  <li class="p-drinks__sub-item">
-                    <p class="p-drinks__name">ミックス</p>
-                    <p class="p-drinks__price">500 yen</p>
-                  </li>
-                </ul>
-              </li>
+              </li>                         
+              <?php endforeach;  ?>
             </ul>
           </div>
         </div>
       </section>
+      <?php
+        endif;
+        endforeach;
+      ?>
     </div>
     <div class="p-grand-menu__link-wrapper">
       <a href="<?php echo esc_url(home_url('/menu')); ?>" class="c-button-primary">その他のメニュー</a>
@@ -503,7 +451,7 @@
           <div class="p-card-news__img-wrapper">
             <?php
               if(has_post_thumbnail()) {
-                the_post_thumbnail('medium', array(
+                the_post_thumbnail('full', array(
                   'class' => 'p-card-news__img lazyload'
                 ));
               } else {
@@ -540,7 +488,7 @@
           <div class="p-card-news__img-wrapper">
             <?php
               if(has_post_thumbnail()) {
-                the_post_thumbnail('small', array(
+                the_post_thumbnail('full', array(
                   'class' => 'p-card-news__img lazyload'
                 ));
               } else {
@@ -563,75 +511,8 @@
       <a href="<?php echo esc_url(home_url('/news')); ?>" class="c-button-primary">過去のお知らせ</a>
     </div>
   </section>
-  
-  <section class="l-access">
-    <div class="p-access">
-      <h2 class="c-section-title">
-        <span class="c-section-title__en">ACCESS</span>
-        <span class="c-section-title__ja">アクセス</span>
-      </h2>
-      <div class="p-access__inner">
-        <div class="p-map">
-          <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0372058864655!2d139.5780239156885!3d35.70070203018986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee39b555205f%3A0xabb26a0a2fbda595!2z44CSMTgwLTAwMDMg5p2x5Lqs6YO95q2m6JS16YeO5biC5ZCJ56Wl5a-65Y2X55S677yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1637065433936!5m2!1sja!2sjp" width="688" height="387" style="border:0;" allowfullscreen="" class="lazyload">
-          </iframe>
-        </div>
-        <address class="p-info">
-          <dl class="p-info__dl">
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                住所
-              </dt>
-              <dd class="p-info__dd">
-                〒000-0000<br>東京都武蔵野市吉祥寺南町一丁目
-              </dd>
-            </div>
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                TEL
-              </dt>
-              <dd class="p-info__dd">
-                <a href="tel:0123-456-789">0123-456-789</a>
-              </dd>
-            </div>
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                Mail
-              </dt>
-              <dd class="p-info__dd">
-                <a href="mailto:example@mail.com">example@mail.com</a>
-              </dd>
-            </div>
-          </dl>
-          <dl class="p-info__dl">
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                営業時間
-              </dt>
-              <dd class="p-info__dd">
-                7:00〜21:00<br>※ラストオーダー 20:30
-              </dd>
-            </div>
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                定休日
-              </dt>
-              <dd class="p-info__dd">
-                水曜日
-              </dd>
-            </div>
-            <div class="p-info__row">
-              <dt class="p-info__dt">
-                座席
-              </dt>
-              <dd class="p-info__dd">
-                テーブル20席 ／ カウンター席6席
-              </dd>
-            </div>
-          </dl>
-        </address>
-      </div>
-    </div>
-  </section>
+
+  <?php get_template_part('includes/access') ?>
 </main>
 
 <?php get_footer(); ?>
