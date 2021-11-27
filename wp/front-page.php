@@ -117,20 +117,45 @@
         パスタとコーヒーが<br class="u-hidden-md-up">とってもおいしい、<br>ほっと落ち着くのんびり空間。
       </p>
     </div>
+
+    <?php
+      $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 1,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
+      $new_posts = get_posts($args);
+      foreach($new_posts as $post) : setup_postdata($post);
+      $category = get_the_category();
+    ?>
     <div class="p-pickup-news">
-      <a href="" class="p-card-sidebar">
+      <a href="<?php the_permalink(); ?>" class="p-card-sidebar">
         <div class="p-card-sidebar__img-wrapper">
-          <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-sidebar__img lazyload">
+          <?php
+            if(has_post_thumbnail()) {
+              the_post_thumbnail('small', array(
+                'class' => 'p-card-sidebar__img'
+              ));
+            } else {
+              echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-sidebar__img">';
+            }
+          ?>
         </div>
-        <p class="p-card-sidebar__cat">カテゴリ</p>
+        <?php if($category[0]) : ?>
+        <p class="p-card-sidebar__cat"><?php echo $category[0]->cat_name; ?></p>
+        <?php endif; ?>
         <div class="p-card-sidebar__body">
-          <time datetime="" class="p-card-sidebar__date p-pickup-news__date">2021.01.01</time>
-          <h3 class="p-card-sidebar__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。
+          <time datetime="<?php the_time('c') ?>" class="p-card-sidebar__date p-pickup-news__date"><?php the_time('Y.n.j'); ?></time>
+          <h3 class="p-card-sidebar__title">
+            <?php the_title(); ?>
           </h3>
         </div>
       </a>
     </div>
+    <?php endforeach; wp_reset_postdata(); ?>
   </div>
+
   <section class="p-home-concept l-home__concept">
     <div class="p-home-concept__inner">
       <picture class="p-home-concept__picture">
@@ -163,6 +188,7 @@
       </div>
     </div>
   </section>
+
   <section class="p-lunch l-home__lunch">
     <div class="p-lunch__inner">
       <h2 class="c-section-title">
@@ -233,6 +259,7 @@
       </div>
     </div>
   </section>
+
   <section class="p-grand-menu l-home__grand-menu">
     <h2 class="c-section-title">
       <span class="c-section-title__en">GRAND MENU</span>
@@ -409,6 +436,7 @@
       <a href="<?php echo esc_url(home_url('/menu')); ?>" class="c-button-primary">その他のメニュー</a>
     </div>
   </section>
+
   <section class="p-gallery l-home__gallery">
     <h2 class="c-section-title">
       <span class="c-section-title__en">GALLERY</span>
@@ -452,6 +480,7 @@
       <a href="" class="c-button-primary">インスタグラムを見る</a>
     </div>
   </section>
+
   <section class="p-news l-home__news">
     <h2 class="c-section-title">
       <span class="c-section-title__en">NEWS</span>
@@ -459,67 +488,82 @@
     </h2>
     <div class="p-news__contents l-inner">
       <article class="p-news__main">
-        <a href="" class="p-card-news p-card-news--large">
+        <?php
+          $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+          );
+          $new_posts = get_posts($args);
+          foreach($new_posts as $post) : setup_postdata($post);
+          $category = get_the_category();
+        ?>
+        <a href="<?php the_permalink(); ?>" class="p-card-news p-card-news--large">
           <div class="p-card-news__img-wrapper">
-            <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+            <?php
+              if(has_post_thumbnail()) {
+                the_post_thumbnail('medium', array(
+                  'class' => 'p-card-news__img lazyload'
+                ));
+              } else {
+                echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-news__img lazyload">';
+              }
+            ?>
           </div>
-          <p class="p-card-news__cat">カテゴリ</p>
+          <?php if($category[0]) : ?>
+          <p class="p-card-news__cat"><?php echo $category[0]->cat_name; ?></p>
+          <?php endif; ?>
           <div class="p-card-news__body">
-            <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
-            <p class="p-card-news__excerpt">
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
-            <time datetime="" class="p-card-news__date">2021.01.01</time>
+            <h3 class="p-card-news__title"><?php the_title(); ?></h3>
+            <p class="p-card-news__excerpt"><?php the_excerpt(); ?></p>
+            <time datetime="<?php the_time('c'); ?>" class="p-card-news__date"><?php the_time('Y.n.j'); ?></time>
           </div>
         </a>
+        <?php endforeach; wp_reset_postdata(); ?>
       </article>
+
       <article class="p-news__other">
-        <a href="" class="p-news__item p-card-news">
+        <?php
+          $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'offset' => 1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+          );
+          $new_posts = get_posts($args);
+          foreach($new_posts as $post) : setup_postdata($post);
+          $category = get_the_category();
+        ?>
+        <a href="<?php the_permalink(); ?>" class="p-news__item p-card-news">
           <div class="p-card-news__img-wrapper">
-            <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
+            <?php
+              if(has_post_thumbnail()) {
+                the_post_thumbnail('small', array(
+                  'class' => 'p-card-news__img lazyload'
+                ));
+              } else {
+                echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-news__img lazyload">';
+              }
+            ?>
           </div>
-          <p class="p-card-news__cat">カテゴリ</p>
+          <?php if($category[0]) : ?>
+          <p class="p-card-news__cat"><?php echo $category[0]->cat_name; ?></p>
+          <?php endif; ?>
           <div class="p-card-news__body">
-            <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
-            <time datetime="" class="p-card-news__date">2021.01.01</time>
+            <h3 class="p-card-news__title"><?php the_title(); ?></h3>
+            <time datetime="<?php the_time('c'); ?>" class="p-card-news__date"><?php the_time('Y.n.j'); ?></time>
           </div>
         </a>
-        <a href="" class="p-news__item p-card-news">
-          <div class="p-card-news__img-wrapper">
-            <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
-          </div>
-          <p class="p-card-news__cat">カテゴリ</p>
-          <div class="p-card-news__body">
-            <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
-            <time datetime="" class="p-card-news__date">2021.01.01</time>
-          </div>
-        </a>
-        <a href="" class="p-news__item p-card-news">
-          <div class="p-card-news__img-wrapper">
-            <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
-          </div>
-          <p class="p-card-news__cat">カテゴリ</p>
-          <div class="p-card-news__body">
-            <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
-            <time datetime="" class="p-card-news__date">2021.01.01</time>
-          </div>
-        </a>
-        <a href="" class="p-news__item p-card-news">
-          <div class="p-card-news__img-wrapper">
-            <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg" alt="" class="p-card-news__img lazyload">
-          </div>
-          <p class="p-card-news__cat">カテゴリ</p>
-          <div class="p-card-news__body">
-            <h3 class="p-card-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、ガーデニングの設計・建築から料理まで、あらゆる空間が誕生。</h3>
-            <time datetime="" class="p-card-news__date">2021.01.01</time>
-          </div>
-        </a>
+        <?php endforeach; wp_reset_postdata(); ?>
       </article>
     </div>
     <div class="p-news__link-wrapper">
       <a href="<?php echo esc_url(home_url('/news')); ?>" class="c-button-primary">過去のお知らせ</a>
     </div>
   </section>
+  
   <section class="l-access">
     <div class="p-access">
       <h2 class="c-section-title">
