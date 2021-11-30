@@ -12,16 +12,11 @@
   </section>
   <div class="c-breadcrumb u-mt5">
     <div class="l-inner">
-      <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/menu/"><span itemprop="name">メニュー</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-      </ul>
+      <?php
+        if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        }
+      ?>
     </div>
   </div>
   <div class="l-lower-menu">
@@ -56,7 +51,7 @@
         <?php
           $term_object = get_queried_object(); // タームオブジェクトを取得
           $term_slug   = $term_object->slug; // タームスラッグ
-          $custom_posts = get_posts(array(
+          $term_posts = get_posts(array(
             'post_type' => 'menu', // 投稿タイプ
             'posts_per_page' => -1, // 表示件数
             'orderby' => 'date', // 表示順の基準
@@ -71,8 +66,8 @@
             )
           ));
           global $post;
-          if($custom_posts): 
-          foreach($custom_posts as $post): setup_postdata($post); 
+          if($term_posts): 
+          foreach($term_posts as $post): setup_postdata($post); 
         ?>     
         <li class="p-menu-list__item p-card-menu p-card-menu--archive">
           <div class="p-card-menu__img-wrapper">
@@ -82,7 +77,10 @@
                   'class' => 'p-card-menu__img lazyload'
                 ));
               } else {
-                echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-pasta01.jpeg" alt="メニューの画像" width="245" height="245" class="p-card-menu__img lazyload">';
+                echo 
+                '<svg class="c-svg p-card-menu__img" width="245" height="245">
+                  <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+                </svg>';
               }
             ?>
           </div>

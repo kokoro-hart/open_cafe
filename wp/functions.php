@@ -44,9 +44,84 @@ function my_script_init()
 add_action('wp_enqueue_scripts', 'my_script_init');
 
 //フォーム設置ページのみContactForm7のcss、jsを読み込み
-add_action( 'wp', function() {
+add_action( 'wp', function() 
+{
   if ( is_page( 'contact' )) return;
   add_filter( 'wpcf7_load_js', '__return_false' );
   add_filter( 'wpcf7_load_css', '__return_false' );
 });
 
+
+add_action('init', function() 
+{
+  //メニュー
+  register_post_type('menu', [
+    'label' => 'メニュー',
+    'public' => true,
+    'menu_position' => 5,
+    'supports' => ['thumbnail','title','editor','custom-fields'],
+    'has_archive' => true,
+    'show_in_rest' =>true,
+    'exclude_from_search' => true,
+  ]);
+
+  register_taxonomy('genre', 'menu',[
+    'label' => 'ジャンル',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
+  //店舗一覧
+  register_post_type('shop-list', [
+    'label' => '店舗一覧',
+    'public' => true,
+    'menu_position' => 5,
+    'supports' => ['thumbnail','title','editor','custom-fields'],
+    'has_archive' => true,
+    'show_in_rest' =>true,
+    'exclude_from_search' => true,
+  ]);
+
+  //ギフト・贈り物
+  register_post_type('products-list', [
+    'label' => 'ギフト・贈り物',
+    'public' => true,
+    'menu_position' => 5,
+    'supports' => ['thumbnail','title','editor','custom-fields'],
+    'has_archive' => true,
+    'show_in_rest' =>true,
+    'exclude_from_search' => true,
+  ]);
+});
+
+
+//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  //遅延読み込み対象の画像のみ
+  if(strpos($html, 'lazyload') === false) {
+      return $html;
+  }
+
+  //srcをdata-srcに置換する
+  $html = str_replace('src="', 'data-src="', $html);
+  return $html;
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+//お知らせ記事一覧のページネーション
+function my_pagination()
+{
+  if(paginate_links()) {
+    echo 
+    '<div class="p-archive-main__pagination c-pagination">' .
+    paginate_links(array(
+      'end_size' => 1,
+      'mid_size' => 1,
+      'prev_next' => true,
+      'prev_text' => false,
+      'next_text' => false,
+    ))
+    .'</div>';
+  }
+}

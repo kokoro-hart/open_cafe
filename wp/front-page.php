@@ -126,20 +126,23 @@
         'order' => 'DESC',
         'tag' => 'pickup',
       );
-      $new_posts = get_posts($args);
-      foreach($new_posts as $post) : setup_postdata($post);
+      $news_posts = get_posts($args);
+      foreach($news_posts as $post) : setup_postdata($post);
       $category = get_the_category();
     ?>
     <div class="p-pickup-news">
       <a href="<?php the_permalink(); ?>" class="p-card-sidebar">
         <div class="p-card-sidebar__img-wrapper">
           <?php
-            if(has_post_thumbnail()) {
-              the_post_thumbnail('full', array(
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('full', array(
                 'class' => 'p-card-sidebar__img'
               ));
             } else {
-              echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-sidebar__img">';
+              echo 
+              '<svg class="c-svg p-card-sidebar__img" width="100" height="100">
+                <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+              </svg>';
             }
           ?>
         </div>
@@ -229,7 +232,10 @@
                     'class' => 'p-card-lunch__img lazyload'
                   ));
                 } else {
-                  echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-pasta01.jpeg" alt="パスタの画像" width="260" height="260" class="p-card-lunch__img lazyload">';
+                  echo 
+                  '<svg class="c-svg p-card-lunch__img" width="260" height="260">
+                    <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+                  </svg>';
                 }
               ?>
             </div>
@@ -302,7 +308,10 @@
                     'class' => 'p-card-menu__img'
                   ));
                 } else {
-                  echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-pasta01.jpeg" alt="メニューの画像" width="342" height="342" class="p-card-menu__img lazyload';
+                  echo 
+                  '<svg class="c-svg p-card-menu__img" width="342" height="342">
+                    <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+                  </svg>';
                 }
               ?>
             </div>
@@ -443,8 +452,8 @@
             'orderby' => 'date',
             'order' => 'DESC',
           );
-          $new_posts = get_posts($args);
-          foreach($new_posts as $post) : setup_postdata($post);
+          $news_posts = get_posts($args);
+          foreach($news_posts as $post) : setup_postdata($post);
           $category = get_the_category();
         ?>
         <a href="<?php the_permalink(); ?>" class="p-card-news p-card-news--large">
@@ -455,7 +464,10 @@
                   'class' => 'p-card-news__img lazyload'
                 ));
               } else {
-                echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-news__img lazyload">';
+                echo 
+                '<svg class="c-svg p-card-news__img" width="510" height="319">
+                  <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+                </svg>';
               }
             ?>
           </div>
@@ -480,8 +492,8 @@
             'orderby' => 'date',
             'order' => 'DESC',
           );
-          $new_posts = get_posts($args);
-          foreach($new_posts as $post) : setup_postdata($post);
+          $news_posts = get_posts($args);
+          foreach($news_posts as $post) : setup_postdata($post);
           $category = get_the_category();
         ?>
         <a href="<?php the_permalink(); ?>" class="p-news__item p-card-news">
@@ -492,7 +504,10 @@
                   'class' => 'p-card-news__img lazyload'
                 ));
               } else {
-                echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/img-mv01_pc.jpeg" alt="記事の画像" class="p-card-news__img lazyload">';
+                echo 
+                '<svg class="c-svg p-card-news__img" width="255" height="159">
+                  <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
+                </svg>';
               }
             ?>
           </div>

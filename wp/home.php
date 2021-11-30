@@ -14,16 +14,11 @@
   </section>
   <div class="c-breadcrumb u-mt5">
     <div class="l-inner">
-      <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/news/"><span itemprop="name">お知らせ</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-      </ul>
+      <?php
+        if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        }
+      ?>
     </div>
   </div>
   <div class="l-inner">
@@ -35,7 +30,7 @@
             while(have_posts()) : the_post();
             $category = get_the_category();
           ?>
-          <a href="" class="p-archive-main__item p-card-news p-card-news--archive">
+          <a href="<?php the_permalink(); ?>" class="p-archive-main__item p-card-news p-card-news--archive">
             <div class="p-card-news__img-wrapper">
               <?php
                 if(has_post_thumbnail()) {
@@ -44,7 +39,7 @@
                   ));
                 } else {
                   echo 
-                  '<svg class="c-svg p-card-news__img" width="510" height="319">
+                  '<svg class="c-svg p-card-news__img" width="340" height="213">
                     <use xlink:href="'. esc_url(get_template_directory_uri()) .'/img/svg/sprite.min.svg#logo" />
                   </svg>';
                 }

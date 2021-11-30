@@ -14,16 +14,11 @@
   </section>
   <div class="c-breadcrumb u-mt5">
     <div class="l-inner">
-      <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">HOME</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a class="c-breadcrumb__link" itemprop="item" href="/news/"><span itemprop="name">お知らせ</span></a>
-          <meta itemprop="position" content="2" />
-        </li>
-      </ul>
+      <?php
+        if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        }
+      ?>
     </div>
   </div>
   <div class="l-inner">
