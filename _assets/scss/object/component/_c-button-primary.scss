@@ -6,9 +6,9 @@
 .c-button-primary {
   position: relative;
   display: inline-block;
-  max-width: 290px;
+  max-width: 283px;
   width: 100%;
-  padding: 24px 12px;
+  padding: 27px 12px;
   background-color: global.$color-text-black;
   color: global.$color-text-white;
   @include global.fz(16);

@@ -17,18 +17,23 @@
 .p-single__info {
   display: flex;
   margin-top: 25px;
+}
+
+.p-single__date {
+  display: inline-block;
+  margin-right: 20px;
   @include global.fz(14);
   @include global.lh(1.21);
   font-weight: 700;
 }
 
-.p-single__date {
-  margin-right: 20px;
-}
-
 .p-single__cat {
+  display: inline-block;
   position: relative;
   padding-left: 20px;
+  @include global.fz(14);
+  @include global.lh(1.21);
+  font-weight: 700;
 
   &::before {
     content: "";

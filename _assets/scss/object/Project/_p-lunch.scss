@@ -57,4 +57,8 @@
 .p-lunch__contents {
   margin-top: 58px;
   background-color: global.$color-text-white;
+
+  @include global.mq(md) {
+    margin-top: 69px;
+  }
 }

@@ -65,10 +65,10 @@
   font-weight: 700;
 
   @include global.mq(md) {
-    letter-spacing: 2.8px;
+    letter-spacing: 3.8px;
     top: auto;
     left: 56px;
-    bottom: 123px;
+    bottom: 112px;
   }
 
   @include global.mq(lg) {
