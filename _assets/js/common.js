@@ -1,12 +1,6 @@
-/**
- * @modules : node_modulesフォルダまでの絶対パスのエイリアス
- * webpack.config.jsにて定義している
- */
 
-//jQueryを使うとき
-//import $ from "@modules/jquery";
-//slickを使うとき
-// import '@modules/slick-carousel';
+//intersection observer polyfill 
+import '@modules/intersection-observer';
 
 //画像遅延読み込み
 const lazy = document.querySelectorAll('.lazyload');
@@ -35,7 +29,7 @@ function inViewport(entries, observer) {
   });
 }
 
-//ビューポート幅360px以下はリサイズして表示
+//デバイス幅360px以下はリサイズして表示
 !(function () {
   const viewport = document.querySelector('meta[name="viewport"]');
   function switchViewport() {
