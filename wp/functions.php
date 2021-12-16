@@ -1,8 +1,6 @@
 <?php
 
-// 初期設定
-//--------------------------------------------------------------------------------------
-
+// セットアップ
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
@@ -21,6 +19,7 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
+//タイトルの区切り
 function change_title_separator( $sep ){
   $sep = ' | ';
   return $sep;
@@ -51,6 +50,29 @@ add_action( 'wp', function()
   add_filter( 'wpcf7_load_css', '__return_false' );
 });
 
+//lazyload対象の投稿画像はsrcをdata-srcに置き換える
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  //遅延読み込み対象の画像のみ
+  if(strpos($html, 'lazyload') === false) {
+      return $html;
+  }
+
+  //srcをdata-srcに置換する
+  $html = str_replace('src="', 'data-src="', $html);
+  return $html;
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+//javascriptの遅延defer属性を追加
+function scriptLoader($script, $handle, $src) {
+	if (is_admin()) {
+		return $script;
+	}
+	$script = sprintf('<script src="%s" type="text/javascript" defer=""></script>' . "\n", $src);
+	return $script;
+}
+add_filter('script_loader_tag', 'scriptLoader', 10, 5);
 
 add_action('init', function() 
 {
@@ -93,21 +115,6 @@ add_action('init', function()
     'exclude_from_search' => true,
   ]);
 });
-
-
-//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
-function my_post_image_html( $html, $post_id, $post_image_id ) {
-
-  //遅延読み込み対象の画像のみ
-  if(strpos($html, 'lazyload') === false) {
-      return $html;
-  }
-
-  //srcをdata-srcに置換する
-  $html = str_replace('src="', 'data-src="', $html);
-  return $html;
-}
-add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
 //お知らせ記事一覧のページネーション
 function my_pagination()
