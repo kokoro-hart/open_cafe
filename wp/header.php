@@ -5,6 +5,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width">
   <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/common/apple-touch-icon.png">
+  <link rel="icon" href="<? echo get_template_directory_uri(); ?>/img/common/favicon.ico" id="favicon">
   <title>Open Cafe - dish &amp; coffee -</title>
   <meta name="description" content="トップページの説明">
   <meta property="og:title" content="Open Cafe - dish &amp; coffee -">
@@ -12,7 +13,7 @@
   <meta property="og:url" content="サイトのドメイン/">
   <meta property="og:type" content="website ">
   <meta property="og:local" content="ja_JP">
-  <meta property="og:image" content="/common/og-image.jpg">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg">
   <meta property="og:site_name" content="サイトのドメイン ">
 
   <?php wp_head(); ?>
