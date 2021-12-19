@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width">
   <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/common/apple-touch-icon.png">
   <link rel="icon" href="<? echo get_template_directory_uri(); ?>/img/common/favicon.ico" id="favicon">
-  <title>Open Cafe - dish &amp; coffee -</title>
-  <meta name="description" content="トップページの説明">
-  <meta property="og:title" content="Open Cafe - dish &amp; coffee -">
-  <meta property="og:description" content="トップページの説明">
-  <meta property="og:url" content="サイトのドメイン/">
+  <meta name="description" content="パスタとコーヒーがとってもおいしい、ほっと落ち着くのんびり空間。">
+  <meta property="og:title" content="<?php the_title(); ?> | Open Cafe - dish &amp; coffee - ">
+  <meta property="og:description" content="パスタとコーヒーがとってもおいしい、ほっと落ち着くのんびり空間。">
+  <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
   <meta property="og:type" content="website ">
   <meta property="og:local" content="ja_JP">
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/common/img-mv01_pc.jpeg">
-  <meta property="og:site_name" content="サイトのドメイン ">
+  <meta property="og:site_name" content="Open Cafe - dish &amp; coffee -">
 
   <?php wp_head(); ?>
 </head>
@@ -23,19 +22,18 @@
     <header class="l-header p-header">
       <div class="p-header__inner">
         <p class="p-header__logo u-hidden-xl-up">
-          <a href="/" class="p-header__logo-link">
+          <a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo-link">
             <svg class="c-svg p-header__logo-icon" width="120" height="64">
-              Open Cafe - dish & coffee -
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#logo02" />
             </svg>
           </a>
         </p>
       </div>
-      <button id="js-drawer-button" class="p-header__button c-button-drawer" aria-controls="js-glabal-nav" aria-expanded="false" area-label="メニューを開閉する">
+      <button id="js-drawer-button" class="p-header__button c-button-drawer" aria-controls="js-drawer-menu" aria-expanded="false">
         <span class="c-button-drawer__line"></span>
       </button>
       <div id="js-drawer-bg" class="p-header__drawer-bg"></div>
-      <div class="p-header-menu" id="js-global-nav" area-hidden="true" area-label="ページ内のメニュー">
+      <div class="p-header-menu" id="js-drawer-menu" area-hidden="true">
         <p class="p-header__logo">
           <a href="/" class="p-header__logo-link">
             <svg class="c-svg p-header__logo-icon" width="120" height="64">
