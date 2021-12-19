@@ -1,7 +1,7 @@
 
 const drawerButton = document.getElementById('js-drawer-button'); //ドロワーボタン
 const drawerBg = document.getElementById('js-drawer-bg'); //ドロワー背景
-const drawerMenu = document.getElementById('js-global-nav'); //ドロワーメニュー
+const drawerMenu = document.getElementById('js-drawer-menu'); //ドロワーメニュー
 
 //ドロワーを閉じる関数
 function closeDrawerMenu() {
